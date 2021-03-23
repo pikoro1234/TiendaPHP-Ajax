@@ -58,30 +58,36 @@
             </div>
             <div class="card p-4 mt-5 mb-5">
                 <h5 class="text-center">Caracteristicas</h5>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Peso</label>
-                    <input type="text" class="form-control" name="peso" id="peso" placeholder="00.00 Gr/Kg">
-                </div>
+                <div class="content-productos d-flex flex-wrap">
+                    <div class="form-group w-50 px-3 py-2">
+                        <label for="exampleInputPassword1">Peso</label>
+                        <input type="text" class="form-control" name="peso" id="peso" placeholder="00.00 Gr/Kg">
+                    </div>
 
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Dimensiones</label>
-                    <input type="text" class="form-control" name="dimension" id="dimension" placeholder="alto 0cm ancho 0cm etc...">
-                </div>
+                    <div class="form-group w-50 px-3 py-2">
+                        <label for="exampleInputPassword1">Dimensiones</label>
+                        <input type="text" class="form-control" name="dimension" id="dimension" placeholder="alto 0cm ancho 0cm etc...">
+                    </div>
 
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Marca</label>
-                    <input type="text" class="form-control" name="marca" id="marca" placeholder="marca blanca, etc.">
-                </div>
+                    <div class="form-group w-50 px-3 py-2">
+                        <label for="exampleInputPassword1">Marca</label>
+                        <input type="text" class="form-control" name="marca" id="marca" placeholder="marca blanca, etc.">
+                    </div>
 
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Color</label>
-                    <input type="text" class="form-control" name="color" id="color" placeholder="rojo con blanco, etc.">
-                </div>
+                    <div class="form-group w-50 px-3 py-2">
+                        <label for="exampleInputPassword1">Color</label>
+                        <input type="text" class="form-control" name="color" id="color" placeholder="rojo con blanco, etc.">
+                    </div>
 
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Envase</label>
-                    <input type="text" class="form-control" name="envase" id="envase" placeholder="envase">
+                    <div class="form-group w-50 px-3 py-2">
+                        <label for="exampleInputPassword1">Envase</label>
+                        <input type="text" class="form-control" name="envase" id="envase" placeholder="envase">
+                    </div>
+                    <div class="form-group w-50 px-3 py-2">
+                       
+                    </div>
                 </div>
+                
             </div>
             <div class="card p-4 mt-5 mb-5">
                 <h5 class="text-center w-100 my-3">Categorias y Estados</h5>	

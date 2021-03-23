@@ -21,7 +21,33 @@ if (isset($_FILES['image3']['name'])) {
 }
 
 
-echo "las foto  en variables: ".$foto1."<br>".$foto2."<br>".$foto3;
+$usuario = $_POST['userNick'];
+
+$nombreProducto = $_POST['nombreProducto'];
+
+$precioProducto=$_POST['precioProducto'];
+
+$descripcionProducto=$_POST['descripcionProducto'];
+
+$pesoProducto=$_POST['pesoProducto'];
+
+$dimensionProducto=$_POST['dimensionProducto'];
+
+$marcaProducto=$_POST['marcaProducto'];
+
+$colorProducto=$_POST['colorProducto'];
+
+$envaseProducto=$_POST['envaseProducto'];
+
+$categoriaProducto=$_POST['categoriaProducto'];
+
+$estadoProducto=$_POST['estadoProducto'];
+
+
+
+echo "las foto  en variables: ".$foto1."<br>".$foto2."<br>".$foto3." el usuario es ".$usuario."--".$nombreProducto
+."--".$precioProducto."--".$descripcionProducto."--".$pesoProducto."--".$dimensionProducto."--".$marcaProducto
+."--".$colorProducto."--".$envaseProducto."--".$categoriaProducto."--".$estadoProducto;
 
 
 

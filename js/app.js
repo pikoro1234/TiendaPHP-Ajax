@@ -14,27 +14,21 @@ $(document).ready(function(){
 
     let precioProducto = $('#precio'); 
 
-    let descripcionProducto = $('#descripcion').val();  
+    let descripcionProducto = $('#descripcion');  
 
-    let pesoProducto = $('#peso').val();  
+    let pesoProducto = $('#peso');  
 
-    let dimensionProducto = $('#dimension').val();   
+    let dimensionProducto = $('#dimension');   
 
-    let marcaProducto = $('#marca').val();   
+    let marcaProducto = $('#marca');   
 
-    let colorProducto = $('#color').val();  
+    let colorProducto = $('#color');  
 
-    let envaseProducto = $('#envase').val();    
+    let envaseProducto = $('#envase');    
 
     let categoriaProducto = $('#categoriaCrear');   
 
-    let estadoProducto = $('#estado').val();   
-
-    let latitud = $('#latCrear').val();  
-
-    let longitud = $('#longCrear').val();
-
-
+    let estadoProducto = $('#estado');   
     
     /* VALIDACION DE TIPO FORMATOS DE FOTOS */
     const validacionFotos = (foto1, foto2, foto3) =>{
@@ -124,9 +118,7 @@ $(document).ready(function(){
 
 
     /* LIMPIAMOS LOS INPUT CUANDO TODO ESTA VALIDADO */
-    const limpiadorErrores = (input) =>{
-
-        alert("el valor FFF de los campos es: "+$(input).val());
+    const limpiadorErrores = (input) =>{       
 
         $(".texto-alerta").remove();
 
@@ -155,6 +147,28 @@ $(document).ready(function(){
 
             formData.append('image3', file3)
         })
+
+        formData.append('userNick', usuario);
+
+        formData.append('nombreProducto', $(nombreProducto).val());
+
+        formData.append('precioProducto', $(precioProducto).val());
+
+        formData.append('descripcionProducto', $(descripcionProducto).val());
+
+        formData.append('pesoProducto', $(pesoProducto).val());
+
+        formData.append('dimensionProducto', $(dimensionProducto).val());
+
+        formData.append('marcaProducto', $(marcaProducto).val());
+
+        formData.append('colorProducto', $(colorProducto).val());
+
+        formData.append('envaseProducto', $(envaseProducto).val());
+
+        formData.append('categoriaProducto', $(categoriaProducto).val());
+
+        formData.append('estadoProducto', $(estadoProducto).val());
 
         __ajax("../../modelsJS/crearProductos.php", formData)
         .done((info)=>{
@@ -189,14 +203,13 @@ $(document).ready(function(){
 
         if (validacionFotos(foto1, foto2, foto3)) {
 
-            if (focusInput(nombreProducto) && focusInput(precioProducto) 
-            && focusInput(categoriaProducto)) {
-                
-                alert("si correcto ambos verdadero");                
+            if (focusInput(nombreProducto) && focusInput(precioProducto) && focusInput(categoriaProducto)) {
+                    
+                envioFormulario();              
 
             }else{            
 
-                alert("falso todo falso")
+                alert('verifica los datos del formulario');
             }                                                            
 
         }else{

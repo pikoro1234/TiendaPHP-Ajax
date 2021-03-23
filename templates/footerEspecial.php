@@ -21,8 +21,6 @@
 
     <script src="../../js/custom.js"></script>
 
-    <script src="../../js/mapa.js"></script>
-
     <script src="../../js/app.js"></script>
 
   </body>

@@ -7,14 +7,37 @@
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <!-- style css -->
-    <link rel="stylesheet" href="http://localhost/Tiendaphp/css/style.css">
+    <link rel="stylesheet" href="http://localhost/TiendaPHP-Ajax/css/style.css">
+
+    <!-- Load Leaflet from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+            crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@2.5.3/dist/esri-leaflet.js"
+        integrity="sha512-K0Vddb4QdnVOAuPJBHkgrua+/A9Moyv8AQEWi0xndQ+fqbRfAFd47z4A9u1AW/spLO0gEaiE1z98PK1gl5mC5Q=="
+        crossorigin=""></script>
+
+    <!-- Geocoding Control -->
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.css"
+        integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g=="
+        crossorigin="">
+    <script src="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.js"
+        integrity="sha512-HrFUyCEtIpxZloTgEKKMq4RFYhxjJkCiF5sDxuAokklOeZ68U2NPfh4MFtyIVWlsKtVbK5GD2/JzFyAfvT5ejA=="
+        crossorigin=""></script>
+
+
     <title>Registrate</title>
 </head>
 <body>
 
     <div class="container registrate m-auto d-flex justify-content-center w-100">
 
-        <form action="http://localhost/Tiendaphp/controllers/registro.php" class="bg-white p-5 w-50 mt-5 mb-5" method="POST">
+        <form action="http://localhost/TiendaPHP-Ajax/controllers/registro.php" class="bg-white p-5 w-100 mt-5 mb-5" method="POST">
             <h3 class="text-center" style="letter-spacing: 3px;">REGISTRATE</h3>
             <div class="contenedor-datos-form d-flex flex-wrap">
                 <div class="form-group w-50 px-3 py-2">
@@ -89,7 +112,7 @@
                 <button type="button" class="btn btn-secondary mb-5 w-100 py-3" id="findLoc">Buscar Direccion</button>  
                 <div id="map"></div>
             </div>
-            <button type="submit" class="btn btn-primary w-100 p-3">Guardar</button>
+            <button type="submit" class="btn btn-primary w-100 p-3" id="btnRegistroUser">Guardar</button>
         </form>
    
     </div>
@@ -115,6 +138,8 @@
 <script src="../js/mapa.js"></script>
 
 <script src="../js/app.js"></script>
+
+<script src="../js/userRegister.js"></script>
 
 </body>
 </html>
