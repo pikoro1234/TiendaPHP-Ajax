@@ -25,7 +25,7 @@
     /* VERIFICAMOS QUE LA URL SEA CORRECTA CONTROLANDO QUE NO SEAN LETRAS */
     if (preg_match("/[a-z]/",$_GET['id'])) {
       
-        print "<script>window.location = 'http://localhost/Tiendaphp/views/dashboard/principal.php';</script>";
+        print "<script>window.location = 'http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php';</script>";
     }
 
     /* VERIFICAMOS SI EXISTE EL PRODUCTO CON ID ENVIADO POR PARAMETRO */
@@ -38,7 +38,7 @@
         
     }else{ 
 
-        print "<script>window.location = 'http://localhost/Tiendaphp/views/dashboard/principal.php';</script>";
+        print "<script>window.location = 'http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php';</script>";
                   
     }
 ?>
@@ -49,7 +49,7 @@
 
     <div class="content-rigth p-5">
         
-        <form action="http://localhost/Tiendaphp/controllers/actualizarProducto.php" method="POST" class="p-5 bg-white m-5">
+        <form action="http://localhost/TiendaPHP-Ajax/controllers/actualizarProducto.php" method="POST" class="p-5 bg-white m-5">
             
             <h1 class="text-center mb-5">Actualizar Producto (<strong><?php echo $idActualizar ?></strong>)</h1>   
 

@@ -18,7 +18,7 @@
 
     <div class="content-rigth p-5">
         
-        <form action="http://localhost/Tiendaphp/controllers/crearProducto.php" id="crearForm" method="POST" class="p-5 bg-white m-5" enctype="multipart/form-data">
+        <form action="http://localhost/TiendaPHP-Ajax/controllers/crearProducto.php" id="crearForm" method="POST" class="p-5 bg-white m-5" enctype="multipart/form-data">
             
             <h2 class="text-center mb-5">Crear Producto</h2>
 

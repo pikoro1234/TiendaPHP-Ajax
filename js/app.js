@@ -34,6 +34,8 @@ $(document).ready(function(){
 
     let longitud = $('#longCrear').val();
 
+    alert(categoriaProducto);
+
     
     /* VALIDACION DE TIPO FORMATOS DE FOTOS */
     const validacionFotos = (foto1, foto2, foto3) =>{

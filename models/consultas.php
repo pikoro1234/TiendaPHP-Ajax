@@ -36,12 +36,12 @@
 
             $_SESSION["logueado"] = $userOriginal;
 
-            header("Location: http://localhost/Tiendaphp/views/dashboard/principal.php");
+            header("Location: http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php");
 
             // print "<script>window.location = '../views/dashboard/principal.php';</script>";
         }else{
            
-            header('Location: http://localhost/Tiendaphp/views/login.php?error=error');
+            header('Location: http://localhost/TiendaPHP-Ajax/views/login.php?error=error');
         }
     }
 
@@ -110,11 +110,11 @@
             if($consultaPreparada->execute()){
                 
                 // header('Location: http://localhost/Tiendaphp/index.php');
-                header('Location: http://localhost/Tiendaphp/views/login.php');
+                header('Location: http://localhost/TiendaPHP-Ajax/views/login.php');
     
             }else{
 
-                header('Location: http://localhost/Tiendaphp/views/404.php');
+                header('Location: http://localhost/TiendaPHP-Ajax/views/404.php');
                 // echo "no se pudo insertar revisa los datos" . mysqli_error($con);
             }
         }
@@ -183,7 +183,7 @@
         $fechaImagen = $fecha->format('dmYHis');
 
         //URL UPLOADS 
-        $link = "http://localhost/Tiendaphp/uploads/";
+        $link = "http://localhost/TiendaPHP-Ajax/uploads/";
 
         //VARIABLE OBTIENE ID DEL USUARIO QUE ESTA EN LA SESSION
         $idUsuario = selectSessionId($con,$user);

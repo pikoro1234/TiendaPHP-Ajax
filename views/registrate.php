@@ -7,14 +7,14 @@
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <!-- style css -->
-    <link rel="stylesheet" href="http://localhost/Tiendaphp/css/style.css">
+    <link rel="stylesheet" href="http://localhost/TiendaPHP-Ajax/css/style.css">
     <title>Registrate</title>
 </head>
 <body>
 
     <div class="container registrate m-auto d-flex justify-content-center w-100">
 
-        <form action="http://localhost/Tiendaphp/controllers/registro.php" class="bg-white p-5 w-50 mt-5 mb-5" method="POST">
+        <form action="http://localhost/TiendaPHP-Ajax/controllers/registro.php" class="bg-white p-5 w-50 mt-5 mb-5" method="POST">
             <h3 class="text-center" style="letter-spacing: 3px;">REGISTRATE</h3>
 
             <div class="form-group">

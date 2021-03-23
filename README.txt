@@ -17,6 +17,6 @@ Anotaciones importantes
 
 /*
 *
-*  URL DEL SITIO WEB  ----  http://localhost/Tiendaphp/
+*  URL DEL SITIO WEB  ----  http://localhost/TiendaPHP-Ajax/
 *
 */

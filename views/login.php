@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <!-- style css -->
-    <link rel="stylesheet" href="http://localhost/Tiendaphp/css/style.css">
+    <link rel="stylesheet" href="http://localhost/TiendaPHP-Ajax/css/style.css">
     <title>Area Privada</title>
 </head>
 <body>
