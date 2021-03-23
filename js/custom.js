@@ -271,7 +271,7 @@ $(document).ready(function(){
     
                             </h2>                        
                         </div>                      
-                        <a href='http://localhost/Tiendaphp/views/singlepage.php?param=${items.id}' class='btn btn-primary'>Leer mas...</a>
+                        <a href='http://localhost/TiendaPHP-Ajax/views/singlepage.php?param=${items.id}' class='btn btn-primary'>Leer mas...</a>
                     </div>
                 </div>`;
             }         

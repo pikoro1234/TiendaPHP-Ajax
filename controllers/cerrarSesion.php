@@ -8,5 +8,5 @@
         session_destroy();
     }
 
-    header("Location: http://localhost/Tiendaphp/index.php");
+    header("Location: http://localhost/TiendaPHP-Ajax/index.php");
 ?>

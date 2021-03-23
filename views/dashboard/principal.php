@@ -46,7 +46,7 @@
                 /* SI ELIMINA BIEN EL PRODUCTO NOS REDIRECCIONA AL AREA PRINCIPAL */
                 if ($eliminarProducto) {
 
-                    print "<script>window.location = 'http://localhost/Tiendaphp/views/dashboard/principal.php';</script>";
+                    print "<script>window.location = 'http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php';</script>";
                     // header('Location: http://localhost/Tiendaphp/views/dashboard/principal.php');
                 }
                 
@@ -102,10 +102,10 @@
                                 <img style='width: 250px;height: 150px;' src='".$elemento['imagen_front']."' class='img-thumbnail'  alt='...'>
                             </td>                                                        
                             <td class='align-middle'>
-                                <a class= 'btn btn-outline-secondary' href='http://localhost/Tiendaphp/views/dashboard/principal.php?eliminar=".$elemento['id']."'>Eliminar</a>
+                                <a class= 'btn btn-outline-secondary' href='http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php?eliminar=".$elemento['id']."'>Eliminar</a>
                             </td>
                             <td class='align-middle'>
-                                <a class= 'btn btn-outline-success' href='http://localhost/Tiendaphp/views/dashboard/actualizar.php?id=".$elemento['id']."'>Actualizar</a>
+                                <a class= 'btn btn-outline-success' href='http://localhost/TiendaPHP-Ajax/views/dashboard/actualizar.php?id=".$elemento['id']."'>Actualizar</a>
                             </td>
                             </tr>";
                     $contador++;

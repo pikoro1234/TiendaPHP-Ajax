@@ -104,18 +104,18 @@
     
             move_uploaded_file($_FILES['foto3']['tmp_name'],$fichero3);
             
-            header('Location: http://localhost/Tiendaphp/views/dashboard/principal.php');
+            header('Location: http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php');
             
         }else{
 
             /* REDIRECCION POR SI EXISTE ALGUN ERROR */
-            header('Location: http://localhost/Tiendaphp/views/404.php?error=imagen');
+            header('Location: http://localhost/TiendaPHP-Ajax/views/404.php?error=imagen');
             // echo "no se pudo insertar producto error 1" . mysqli_error($conn);
         } 
 
     }else{
     
-            header('Location: http://localhost/Tiendaphp/views/404.php?error=imagen');
+            header('Location: http://localhost/TiendaPHP-Ajax/views/404.php?error=imagen');
             // echo "no se pudo insertar producto error 2" . mysqli_error($conn);
     }
 ?>

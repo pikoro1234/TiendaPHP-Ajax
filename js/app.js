@@ -1,12 +1,12 @@
 $(document).ready(function(){
+
+    /* DATOS DEL PRODUCTO Y EL VENDEDOR */
     
     let foto1 = document.getElementById('foto1');
 
     let foto2 = document.getElementById('foto2');
 
     let foto3 = document.getElementById('foto3'); 
-
-    /* DATOS DEL PRODUCTO Y EL VENDEDOR */
 
     let usuario = $('#user').val(); 
 
@@ -26,13 +26,14 @@ $(document).ready(function(){
 
     let envaseProducto = $('#envase').val();    
 
-    let categoriaProducto = $('#categoriaCrear').val();   
+    let categoriaProducto = $('#categoriaCrear');   
 
     let estadoProducto = $('#estado').val();   
 
     let latitud = $('#latCrear').val();  
 
     let longitud = $('#longCrear').val();
+
 
     
     /* VALIDACION DE TIPO FORMATOS DE FOTOS */
@@ -83,14 +84,6 @@ $(document).ready(function(){
         }
     }
     /* VALIDACION DE TIPO FORMATOS DE FOTOS */
-
-
-
-    /* VALIDACION DE LOS CAMPOS DEL FORMULARIO */
-    const validacionDatosForm = () =>{
-
-    }
-    /* VALIDACION DE LOS CAMPOS DEL FORMULARIO */
 
 
 
@@ -196,7 +189,8 @@ $(document).ready(function(){
 
         if (validacionFotos(foto1, foto2, foto3)) {
 
-            if (focusInput(nombreProducto) && focusInput(precioProducto)) {
+            if (focusInput(nombreProducto) && focusInput(precioProducto) 
+            && focusInput(categoriaProducto)) {
                 
                 alert("si correcto ambos verdadero");                
 

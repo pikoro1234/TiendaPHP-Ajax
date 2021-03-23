@@ -65,11 +65,10 @@ $conPDO = conexionPDO();
 if (actualizarMiProducto($conPDO, $id, $nombre, $precio, $descripcion, $peso, $dimension, $marca, $color, $envase, $categoria, $estado)){
     
     /* header('Location: http://localhost/Tiendaphp/views/dashboard/actualizar.php'); */
-    print "<script>window.location = ' http://localhost/Tiendaphp/views/dashboard/principal.php';</script>";
-
+    print "<script>window.location = ' http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php';</script>";
 }else{
 
-    print "<script>window.location = ' http://localhost/Tiendaphp/views/dashboard/principal.php';</script>";
+    print "<script>window.location = ' http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php';</script>";
 }
 ?>
 

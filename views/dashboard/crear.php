@@ -18,7 +18,7 @@
 
     <div class="content-rigth p-5">
         
-        <form action="http://localhost/Tiendaphp/controllers/crearProducto.php" id="crearForm" method="POST" class="p-5 bg-white m-5" enctype="multipart/form-data">
+        <form action="http://localhost/TiendaPHP-Ajax/controllers/crearProducto.php" id="crearForm" method="POST" class="p-5 bg-white m-5" enctype="multipart/form-data">
             
             <h2 class="text-center mb-5">Crear Producto</h2>
 
@@ -83,7 +83,6 @@
                     <input type="text" class="form-control" name="envase" id="envase" placeholder="envase">
                 </div>
             </div>
-            <!---
             <div class="card p-4 mt-5 mb-5">
                 <h5 class="text-center w-100 my-3">Categorias y Estados</h5>	
                 <div class="form-group d-flex flex-wrap">
@@ -116,44 +115,7 @@
                         </div>
                     </div>
                     
-                </div>  
-
-
-                <div class="form-group d-flex flex-wrap">		
-                    <h5 class="text-center w-100 my-3">Datos de Ubicación</h5>	
-                    <div class="pr-3 w-50">
-                        <label for="">Tipo de Via</label>
-                        <select class="custom-select" id="via" name="via">                
-                            <option value="1">Calle</option>
-                            <option value="2">Barrio</option>
-                            <option value="3">Avenida</option>
-                        </select>
-                    </div>
-                    <div class="pl-3 w-50">
-                        <label for="">Nombre</label>
-					    <input type="text" class="form-control" id="nomCarrer" name="nomCarrer">
-                    </div>
-
-                    <div class="pr-3 w-50">
-                        <label for="">Número</label>
-					    <input type="text" class="form-control" id="numCarrer" name="numCarrer">
-                    </div>
-
-                    <div class="pl-3 w-50">
-                        <label for="">Población</label>
-					    <input type="text" class="form-control" id="poblacio" name="poblacio">
-                    </div>			                    
-                </div>
- -->
-                <div class="form-group">
-                    <h5 class="text-center my-4">Ubicación del Producto</h5>
-                    <input type="text" class="w-50" name="latCrear" id="latCrear">
-                    <input type="text" class="w-50" name="longCrear" id="longCrear">
-                    <button type="button" class="btn btn-secondary mb-5 w-100 py-3" id="findLoc">Buscar Direccion</button>  
-                    <div id="map"></div>
-                </div>
-
-        
+                </div>                      
             <button type="submit" class="btn btn-primary mt-5 mb-5 py-4 w-50" id="enviarDatosProductos">Enviar</button>
             
         </form>

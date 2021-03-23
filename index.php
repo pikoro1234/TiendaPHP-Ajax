@@ -141,7 +141,7 @@
                           <span class=' text-white badge bg-secondary'>€ ".$prod['precio']."</span>
                         </h2>                        
                       </div>                      
-                      <a href='http://localhost/Tiendaphp/views/singlepage.php?param=".$prod['id']."' class='btn btn-primary'>Leer mas...</a>
+                      <a href='http://localhost/TiendaPHP-Ajax/views/singlepage.php?param=".$prod['id']."' class='btn btn-primary'>Leer mas...</a>
                   </div>
                 </div>";
         }
