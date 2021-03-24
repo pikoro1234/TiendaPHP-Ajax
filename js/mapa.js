@@ -56,11 +56,9 @@ $(document).ready(function(){
 
                 console.log("lat = "+lat+" , lng = "+lng);
 
-                generarMarker(lat, lng);
-                
+                generarMarker(lat, lng);        
             }
         })
-
     }
 
     $("#findLoc").on('click', () =>{
