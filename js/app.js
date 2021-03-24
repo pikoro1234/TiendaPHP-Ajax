@@ -128,6 +128,25 @@ $(document).ready(function(){
 
 
 
+    /* DATOS VACIOS REEMPLACE */
+    const generadorDatosRelleno = (element, mensaje) =>{
+
+        let dato;
+
+       if ($(element).val() == "") {
+
+            dato = mensaje
+            
+        }else{
+
+            dato = $(element).val();
+        }
+
+        return dato
+
+    }
+
+
     /* ENVIO DEL FORMULARIO A PHP */
     const envioFormulario = () =>{
 
@@ -154,7 +173,7 @@ $(document).ready(function(){
 
         formData.append('precioProducto', $(precioProducto).val());
 
-        formData.append('descripcionProducto', $(descripcionProducto).val());
+        formData.append('descripcionProducto', generadorDatosRelleno(descripcionProducto,"el campo esta viniedo vacio"));
 
         formData.append('pesoProducto', $(pesoProducto).val());
 

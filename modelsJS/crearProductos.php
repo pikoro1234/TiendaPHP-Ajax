@@ -2,83 +2,35 @@
 
 require_once("../models/conexion.php");
 
+$conn = conexion();
+
+$usuario = $_POST['userNick'];
+
 $foto1 = $_FILES['image1']['name'];
 
 $foto2 = $_FILES['image2']['name'];
     
 $foto3 = $_FILES['image3']['name'];
 
-$usuario = $_POST['userNick'];
-
 $nombreProducto = $_POST['nombreProducto'];
 
 $precioProducto = $_POST['precioProducto'];
 
+$descripcionProducto = $_POST['descripcionProducto'];
+
+$pesoProducto = $_POST['pesoProducto'];
+
+$dimensionProducto = $_POST['dimensionProducto'];
+
+$marcaProducto = $_POST['marcaProducto'];
+
+$colorProducto = $_POST['colorProducto'];
+
+$envaseProducto = $_POST['envaseProducto'];
+
 $categoriaProducto = $_POST['categoriaProducto'];
 
-if ($_POST['descripcionProducto'] != "") {
-
-    $descripcionProducto = $_POST['descripcionProducto'];
-
-}else{
-
-    $descripcionProducto = "producto sin descripción";    
-}
-
-if ($_POST['pesoProducto'] != "") {
-
-    $pesoProducto = $_POST['pesoProducto'];
-
-}else{
-
-    $pesoProducto = "producto sin peso";
-}
-
-if ($_POST['dimensionProducto'] != "") {
-
-    $dimensionProducto = $_POST['dimensionProducto'];
-
-}else{
-
-    $dimensionProducto = "producto sin dimennsiones";
-}
-
-if ($_POST['marcaProducto'] != "") {
-
-    $marcaProducto = $_POST['marcaProducto'];
-
-}else{
-    
-    $marcaProducto = "producto sin marca";
-}
-
-if ($_POST['colorProducto'] != "") {
-    
-    $colorProducto = $_POST['colorProducto'];
-
-}else{
-
-    $colorProducto = "producto sin color";
-}
-
-if ($_POST['envaseProducto'] != "") {
-    
-    $envaseProducto = $_POST['envaseProducto'];
-
-}else{
-
-    $envaseProducto = "producto sin envase";
-}
-
-if ($_POST['estadoProducto'] != "") {
-    
-    $estadoProducto = $_POST['estadoProducto'];
-}else{
-
-    $estadoProducto = "estado no especificado";
-}
-
-$conn = conexion();
+$estadoProducto = $_POST['estadoProducto'];
 
 insertarProducto($conn,$usuario,$foto1,$foto2,$foto3,$nombreProducto,$precioProducto,$descripcionProducto,$pesoProducto,$dimensionProducto,$marcaProducto,$colorProducto,$envaseProducto,$categoriaProducto,$estadoProducto);
 
@@ -202,17 +154,4 @@ function selectSessionId($con,$user){
 
     return $idUsuario;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
