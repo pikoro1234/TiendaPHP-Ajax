@@ -54,7 +54,7 @@ $(document).ready(function(){
                       
                         }else{
 
-                            return true;
+                            return false;
                         }
 
                     }else{
@@ -64,7 +64,7 @@ $(document).ready(function(){
 
                 }else{                    
 
-                    return true;
+                    return false;
                 }
 
             }else{
@@ -214,7 +214,7 @@ $(document).ready(function(){
 
         }else{
 
-            alert("el formato de las fotos deben ser PNG/JPEG");
+            alert("(OBLIGATORIO ENVIAR TODAS LAS FOTOS) formato permitido PNG/JPEG");
         }
     })
     /* BOTON ACTIVA EVENTO ENVIO DE FORMULARIO */

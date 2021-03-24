@@ -4,23 +4,9 @@ require_once("../models/conexion.php");
 
 $foto1 = $_FILES['image1']['name'];
 
-if (isset($_FILES['image2']['name'])) {
-
-    $foto2 = $_FILES['image2']['name'];
-
-}else{
-
-    $foto2 = "";
-}
-
-if (isset($_FILES['image3']['name'])) {
+$foto2 = $_FILES['image2']['name'];
     
-    $foto3 = $_FILES['image3']['name'];
-
-}else{
-
-    $foto3 = "";
-}
+$foto3 = $_FILES['image3']['name'];
 
 $usuario = $_POST['userNick'];
 
@@ -171,42 +157,17 @@ function insertarProducto($con,$user,$foto1,$foto2,$foto3,$nombre,$precio,$descr
         $directorio = "../uploads/";
 
         $fichero1 = $directorio.basename($fechaImagen.$_FILES['image1']['name']);
-
-        $fichero2 = $directorio.basename($_FILES['image2']['name']);
-
-        
-
-        if ($foto2 != "") {
-            echo "en el if";
-
-            $fich2 = $directorio.basename("nofoto.png");
-
-            //$fichero2 = $directorio.basename($fechaImagen.$_FILES['image2']['name']);
-
-        }else{
-
-            $fich2 = $fichero2;
-
-            echo "en el falso";
-
-            //$fichero2 = $directorio.basename($_FILES['image2']['name']);
-        }
-
-        /* if ($foto3 != "nofoto.png") {
-
-            $fichero3 = $directorio.basename($fechaImagen.$_FILES['image3']['name']);
-
-        }else{
-
-            $fichero3 = $directorio.basename($_FILES['image3']['name']);
-        } */
-
-        /* AQUI MOVEMOS EL ARCHIVO AL SERVIDOR */
-        //move_uploaded_file($_FILES['image1']['tmp_name'],$fichero1);
+            
+        $fichero2 = $directorio.basename($fechaImagen.$_FILES['image2']['name']);
     
-        move_uploaded_file($_FILES['image2']['tmp_name'],$fich2);
+        $fichero3 = $directorio.basename($_FILES['image3']['name']);        
+        
+        /* AQUI MOVEMOS EL ARCHIVO AL SERVIDOR */
+        move_uploaded_file($_FILES['image1']['tmp_name'],$fichero1);
+    
+        move_uploaded_file($_FILES['image2']['tmp_name'],$fichero2);
 
-        //move_uploaded_file($_FILES['image3']['tmp_name'],$fichero3); */
+        move_uploaded_file($_FILES['image3']['tmp_name'],$fichero3);
 
         echo "true";
 
