@@ -7,7 +7,7 @@
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <!-- style css -->
-    <link rel="stylesheet" href="http://localhost/TiendaPHP-Ajax/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <!-- Load Leaflet from CDN -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -58,6 +58,11 @@
                 </div>
 
                 <div class="form-group w-50 px-3 py-2">
+                    <label for="exampleInputPassword1">DNI</label>
+                    <input type="text" class="form-control" name="dniUser" id="dniUser" placeholder="nombre completo" required>
+                </div>
+
+                <div class="form-group w-50 px-3 py-2">
                     <label for="exampleInputPassword1">Email</label>
                     <input type="email" class="form-control" name="email" id="email" placeholder="email" required>
                 </div>
@@ -78,7 +83,6 @@
                 </div>
             </div>
             
-
             <!-- nuevos datos de mapa -->
             <div class="form-group d-flex flex-wrap">		
                 <h5 class="text-center w-100 my-3">Datos de Ubicación</h5>	
