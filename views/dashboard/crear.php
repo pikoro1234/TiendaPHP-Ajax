@@ -22,7 +22,7 @@
             
             <h2 class="text-center mb-5">Crear Producto</h2>
 
-            <input type="text" name="user" id="user" value="<?php echo $user;?>">
+            <input type="hidden" name="user" id="user" value="<?php echo $user;?>">
 
             <div class="form-group">
                 <label for="exampleFormControlFile1">Subir foto producto</label>
@@ -89,7 +89,7 @@
                 </div>
                 
             </div>
-            <div class="card p-4 mt-5 mb-5">
+            <div class="card p-4 mt-5 mb-1">
                 <h5 class="text-center w-100 my-3">Categorias y Estados</h5>	
                 <div class="form-group d-flex flex-wrap">
                     <div class="pr-3 w-50">
@@ -122,7 +122,7 @@
                     </div>
                     
                 </div>                      
-            <button type="submit" class="btn btn-primary mt-5 mb-5 py-4 w-50" id="enviarDatosProductos">Enviar</button>
+            <button type="submit" class="btn btn-primary mt-2 mb-2 py-4 w-50" id="enviarDatosProductos">Enviar</button>
             
         </form>
         

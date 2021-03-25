@@ -145,8 +145,10 @@ $(document).ready(function(){
         return dato
 
     }
+    /* DATOS VACIOS REEMPLACE */
 
 
+    
     /* ENVIO DEL FORMULARIO A PHP */
     const envioFormulario = () =>{
 
@@ -173,21 +175,21 @@ $(document).ready(function(){
 
         formData.append('precioProducto', $(precioProducto).val());
 
-        formData.append('descripcionProducto', generadorDatosRelleno(descripcionProducto,"el campo esta viniedo vacio"));
+        formData.append('descripcionProducto', generadorDatosRelleno(descripcionProducto, "sin descripcion"));
 
-        formData.append('pesoProducto', $(pesoProducto).val());
+        formData.append('pesoProducto', generadorDatosRelleno(pesoProducto, "sin peso especificado"));
 
-        formData.append('dimensionProducto', $(dimensionProducto).val());
+        formData.append('dimensionProducto', generadorDatosRelleno(dimensionProducto, "sin dimension especificada"));
 
-        formData.append('marcaProducto', $(marcaProducto).val());
+        formData.append('marcaProducto', generadorDatosRelleno(marcaProducto, "sin marca"));
 
-        formData.append('colorProducto', $(colorProducto).val());
+        formData.append('colorProducto', generadorDatosRelleno(colorProducto, "ningun color"));
 
-        formData.append('envaseProducto', $(envaseProducto).val());
+        formData.append('envaseProducto', generadorDatosRelleno(envaseProducto, "sin envase"));
 
         formData.append('categoriaProducto', $(categoriaProducto).val());
 
-        formData.append('estadoProducto', $(estadoProducto).val());
+        formData.append('estadoProducto', generadorDatosRelleno(estadoProducto, "estado null"));
 
         __ajax("../../modelsJS/crearProductos.php", formData)
         .done((info)=>{
