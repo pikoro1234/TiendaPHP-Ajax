@@ -27,7 +27,7 @@ $(document).ready(function(){
 
         if ($(elemento).val() == "") {
 
-            generadorErrores(elemento);
+            generadorErrores(elemento, "el campo no debe quedar vacio");
 
             return false;    
             
@@ -41,15 +41,69 @@ $(document).ready(function(){
     /* FOCUS PARA LOS ERRORES */
 
 
+    /* VALIDADOR DNI */
+    const dniValidacion = (inputDni) =>{
+
+        
+        let re = /^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKET]{1}$/g;
+
+        if (!re.test($(inputDni).val())) {
+
+            generadorErrorDni(inputDni, "la letra debe ser mayuscula y el campo 8 num y una letra" );
+
+            return false;
+
+        }else{
+
+            limpiadorErrores(inputDni);
+
+        }
+
+        // Check last letter
+        let lastLetter = $(inputDni).val().substr($(inputDni).val().length-1, $(inputDni).val().lenght);
+
+        let index = parseInt($(inputDni).val().substr(0, 8)) % 23;
+
+        let dniLetters = 'TRWAGMYFPDXBNJZSQVHLCKET';
+
+        if (dniLetters.charAt(index) == lastLetter){
+            
+            limpiadorErrores(inputDni);
+
+            return true;
+            
+        } else{
+        
+            generadorErrorDni(inputDni, "Tu letra calculada es "+ dniLetters.charAt(index));
+
+            return false;
+
+        }
+    }
+    /* VALIDADOR DNI */
+
+
+    /* FUNCION QUE GENERA LOS ERRORES DE DNI */
+    const generadorErrorDni = (input,memsaje) =>{
+        
+        $(input).addClass('focusElemento');
+
+        $(input).after(`<p class="text-danger texto-alerta">${memsaje}</p>`);
+
+        $('.texto-alerta').css('display','block')        
+    }
+    /* FUNCION QUE GENERA LOS ERRORES DE INPUTS */
+
+
 
     /* FUNCION QUE GENERA LOS ERRORES DE INPUTS */
-    const generadorErrores = (input) =>{
+    const generadorErrores = (input,memsaje) =>{
 
         if ($(input).val() == "") {
 
             $(input).addClass('focusElemento');
 
-            $(input).after(`<p class="text-danger texto-alerta">el campo no debe quedar vacio</p>`);
+            $(input).after(`<p class="text-danger texto-alerta">${memsaje}</p>`);
 
             $('.texto-alerta').css('display','block');
         }
@@ -73,11 +127,17 @@ $(document).ready(function(){
 
         e.preventDefault();
 
-        if (focusInput(userNick) && focusInput(password) && focusInput(nombreUser) && focusInput(dniUser)) {
+        if(dniValidacion(dniUser)){
+            console.log("valido")
+        }else{
+            console.log("noo valido")
+        }
+
+        /* if (focusInput(userNick) && focusInput(password) && focusInput(nombreUser) && focusInput(dniUser)) {
             
         }
 
-        alert("formulario registro")
+        alert("formulario registro") */
     })
 
 
