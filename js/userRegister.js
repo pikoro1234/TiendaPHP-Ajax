@@ -41,10 +41,10 @@ $(document).ready(function(){
     /* FOCUS PARA LOS ERRORES */
 
 
+
     /* VALIDADOR DNI */
     const dniValidacion = (inputDni) =>{
 
-        
         let re = /^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKET]{1}$/g;
 
         if (!re.test($(inputDni).val())) {
@@ -77,10 +77,34 @@ $(document).ready(function(){
             generadorErrorDni(inputDni, "Tu letra calculada es "+ dniLetters.charAt(index));
 
             return false;
-
         }
     }
     /* VALIDADOR DNI */
+
+
+
+    /* VALIDACION E-MAIL */
+    const isValidEmail = (elemento) =>{
+
+        console.log("ejecutando isvalid");
+
+        let regexEmail =  /^\w+(\.\w+)*@\w+(\.\w+){1,2}$/g;
+
+        if (regexEmail.test($(elemento).val())) {
+
+            limpiadorErrores(elemento);
+
+            return true;
+            
+        }else{
+
+            generadorErrores(elemento, "email invalido");
+
+            return false;
+        }
+    }
+    /* VALIDACION E-MAIL */
+    
 
 
     /* FUNCION QUE GENERA LOS ERRORES DE DNI */
@@ -120,26 +144,80 @@ $(document).ready(function(){
         $(input).removeClass('focusElemento');
     }
     /* LIMPIAMOS LOS INPUT CUANDO TODO ESTA VALIDADO */
+
+
+
+    /* FUNCION QUE RELLENA INPUTS SIN IMPORTANCIA */
+    const datosRelleno = (elemento) =>{
+
+        if (elemento === "") {
+
+            return "sin datos";
+
+        }else{
+
+            return elemento;
+        }
+    }
+    /* FUNCION QUE RELLENA INPUTS SIN IMPORTANCIA */
+
+
+
+    /* FUNCION QUE ENVIA LOS DATOS DEL FORMULARIO */
+    const envioFormulario = ( nick, password, nombre, dni, email, direction, telefono, city, lati, longi ) =>{    
+        
+        const valores = {
+            "nickUser" : $(nick).val(),
+            "passUser" : $(password).val(),
+            "nombreUser" : $(nombre).val(),
+            "dniUser" : $(dni).val(),
+            "emailUser" : $(email).val(),
+            "direcUser" : datosRelleno($(direction).val()),
+            "telfUser" : datosRelleno($(telefono).val()),
+            "cityUser" : datosRelleno($(city).val()),
+            "latiUser" : $(lati).val(),
+            "longiUser" : $(longi).val()
+        }
+
+        __ajax("../modelsJS/registrarUsuario.php", valores)
+        .done((info) =>{
+            console.log(info);
+        })
+    }
+    /* FUNCION QUE ENVIA LOS DATOS DEL FORMULARIO */
+
+
+
+    /* POST AJAX A ENVIO MAS FOTOS */
+    const __ajax = (url, data) => {  
+
+        const ajax = $.ajax({
+            "method":"POST",
+            "url":url,
+            "data":data,           
+        })
+
+        return ajax;
+    }
+    /* POST AJAX A ENVIO MAS FOTOS */
     
         
 
+    /* BOTON CON EL QUE ENVIAMOS LOS DATOS */
     $('#btnRegistroUser').on('click', (e) =>{
 
         e.preventDefault();
 
-        if(dniValidacion(dniUser)){
-            console.log("valido")
-        }else{
-            console.log("noo valido")
-        }
+        /* if (focusInput(userNick) && focusInput(password) && focusInput(nombreUser) && isValidEmail(emailUser)
+        && dniValidacion(dniUser)) { */
 
-        /* if (focusInput(userNick) && focusInput(password) && focusInput(nombreUser) && focusInput(dniUser)) {
+            envioFormulario(userNick, password, nombreUser, dniUser, emailUser, phoneUser, direccion, ciudad, latitud, longitud);
             
-        }
+       /*  }else{
 
-        alert("formulario registro") */
+            alert("formulario registro")
+        } */
+    
     })
-
-
 
 })
