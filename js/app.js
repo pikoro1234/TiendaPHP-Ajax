@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
     /* DATOS DEL PRODUCTO Y EL VENDEDOR */
-    
     let foto1 = document.getElementById('foto1');
 
     let foto2 = document.getElementById('foto2');

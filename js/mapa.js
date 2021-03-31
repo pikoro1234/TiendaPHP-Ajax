@@ -2,7 +2,6 @@ $(document).ready(function(){
 
     let map, lat, lng;
 
-
     const loadMap = () =>{
 
         map = L.map('map').setView([41.388, 2.159], 13);
@@ -66,6 +65,4 @@ $(document).ready(function(){
         geocoderDirecciones();
     })
     
-
-
 })

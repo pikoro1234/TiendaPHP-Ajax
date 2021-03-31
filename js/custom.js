@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
     let contenedorCardsProd = document.querySelector('.content-productos');
-
     
     /* BOTTON LOGIN */
     $('.btn-login').on('click', (e) => {
@@ -189,11 +188,6 @@ $(document).ready(function(){
         }
     });
     /* DESHABILITAMOS TECLA ENTER POR QUE POR DEFECTO ENVIA FORMULARIO PARA NO INTERFERIR CON EL AJAX */
-
-
-
-
-
 
 /*
 *

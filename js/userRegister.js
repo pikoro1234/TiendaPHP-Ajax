@@ -84,9 +84,7 @@ $(document).ready(function(){
 
 
     /* VALIDACION E-MAIL */
-    const isValidEmail = (elemento) =>{
-
-        console.log("ejecutando isvalid");
+    const isValidEmail = (elemento) =>{        
 
         let regexEmail =  /^\w+(\.\w+)*@\w+(\.\w+){1,2}$/g;
 
@@ -208,16 +206,22 @@ $(document).ready(function(){
 
         e.preventDefault();
 
-        /* if (focusInput(userNick) && focusInput(password) && focusInput(nombreUser) && isValidEmail(emailUser)
-        && dniValidacion(dniUser)) { */
+        if (focusInput(userNick) && focusInput(password) && focusInput(nombreUser) && isValidEmail(emailUser)
+        && dniValidacion(dniUser) && focusInput(latitud) && focusInput(longitud)) {
 
-            envioFormulario(userNick, password, nombreUser, dniUser, emailUser, phoneUser, direccion, ciudad, latitud, longitud);
+
+            /* if ($(latitud).val() === "" && $(longitud).val() === "") {
+
+                alert(" esta vacio")
+
+            }else{*/
+                envioFormulario(userNick, password, nombreUser, dniUser, emailUser, phoneUser, direccion, ciudad, latitud, longitud);
+            /* } */
             
-       /*  }else{
+        }else{
 
-            alert("formulario registro")
-        } */
-    
+            alert("no se pudo enviar el formulario con los datos");
+        }
     })
 
 })

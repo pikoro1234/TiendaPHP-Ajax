@@ -111,9 +111,11 @@
             </div>
             <div class="form-group">
                 <h5 class="text-center my-4">Ubicación del Producto</h5>
-                <input type="text" class="w-50" name="latCrear" id="latCrear">
-                <input type="text" class="w-50" name="longCrear" id="longCrear">
-                <button type="button" class="btn btn-secondary mb-5 w-100 py-3" id="findLoc">Buscar Direccion</button>  
+                <div class="content-lat d-flex">
+                    <input type="text" class="w-50 mr-2 px-2 mb-4" name="latCrear" id="latCrear" placeholder="latitud">
+                    <input type="text" class="w-50 ml-2 px-2 mb-4" name="longCrear" id="longCrear" placeholder="longitud">
+                </div>                
+                <button type="button" class="btn btn-secondary mb-5 w-100 py-3" id="findLoc">Generar Coordenadas</button>  
                 <div id="map"></div>
             </div>
             <button type="submit" class="btn btn-primary w-100 p-3" id="btnRegistroUser">Guardar</button>
