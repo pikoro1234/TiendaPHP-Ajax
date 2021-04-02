@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,6 +42,72 @@
 </style>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <a class='navbar-brand' style='letter-spacing: 3px;' href='http://localhost/TiendaPHP-Ajax/index.php'>LOGO</a>
+
+    <!-- navbar mobile -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+        <div class="botones-register" style="margin-right: 30px;">
+                
+            <!-- RECOGEMOS Y VALIDAMOS LA SESION PARA PERMITIR ACCESO Y/O MOSTRAR DISTINTOS ELEMENTOS SI ESTA Y NO LOGUEADO -->
+            <?php
+                if (!isset($_SESSION['logueado'])) {
+
+                    echo "<a href='http://localhost/TiendaPHP-Ajax/views/login.php' class='btn btn-outline-success ml-5 mr-2' style='font-size:14px;'>AREA PRIVADA</a>"; 
+                    
+                    echo "<a href='http://localhost/TiendaPHP-Ajax/views/registrate.php' class='btn btn-outline-success' style='font-size:14px;'>REGISTRATE</a>";
+
+                }else{
+                    
+                    echo "<a href='http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php' class='btn btn-outline-success ml-5 mr-2' style='font-size:14px;'>AREA PRIVADA</a>";
+                }
+            ?>
+            <a class='btn btn-outline-success ml-1 mr-2' style='font-size:14px;' href='http://localhost/TiendaPHP-Ajax/index.php'>INICIO</a>
+        </div>
+        
+        <div class="imagen-user d-flex">
+
+            <!-- RECOGEMOS Y VALIDAMOS LA SESION PARA PERMITIR ACCESO Y/O MOSTRAR DISTINTOS ELEMENTOS SI ESTA Y NO LOGUEADO -->
+            <?php 
+
+                if (isset($_SESSION["logueado"])) {
+
+                    echo "<a class='nav-link mt-1' href='http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php'>".$_SESSION["logueado"]."</a>";
+
+                    echo "<a href=''><img src='http://localhost/TiendaPHP-Ajax/img/logophp.png' width='50' height='50' alt='...' class='rounded-circle'></a>";
+
+                }else{
+
+                    echo "<a class='nav-link mt-1' href='http://localhost/TiendaPHP-Ajax/views/login.php'>No identificado</a>";
+                }
+                
+                if (isset($_SESSION["logueado"])) {
+
+                    echo "<a class='nav-link mt-1' href='http://localhost/TiendaPHP-Ajax/controllers/cerrarSesion.php'> cerrar sesion</a>";
+                }
+            ?>
+        </div>
+    </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<div class="container pt-5 container-mapa">    
 		<h1 class="text-center">Mapa de todos los productos</h1>
 		<div class="row h-100">		

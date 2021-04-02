@@ -10,8 +10,6 @@ selectdatosMapa($conn);
 function selectdatosMapa($con){        
 
     $resultado = array();
-    
-    /* $sql = "SELECT clientes.latitud,clientes.longitud,clientes.nick_user,producto.nombre,producto.precio,producto.imagen_front FROM clientes JOIN producto ON clientes.id = producto.id_cliente"; */
 
     $sql = "SELECT latitud,longitud,nick_user,id FROM clientes";        
     

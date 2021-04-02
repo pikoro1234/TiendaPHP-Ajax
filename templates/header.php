@@ -65,29 +65,30 @@
                         echo "<a href='http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php' class='btn btn-outline-success ml-5 mr-2' style='font-size:14px;'>AREA PRIVADA</a>";
                     }
                 ?>
+                <a class='btn btn-outline-success ml-1 mr-2' style='font-size:14px;' href='http://localhost/TiendaPHP-Ajax/mapa.php'> MAPA PRODUCTOS</a>
             </div>
             
             <div class="imagen-user d-flex">
 
-            <!-- RECOGEMOS Y VALIDAMOS LA SESION PARA PERMITIR ACCESO Y/O MOSTRAR DISTINTOS ELEMENTOS SI ESTA Y NO LOGUEADO -->
-            <?php 
+                <!-- RECOGEMOS Y VALIDAMOS LA SESION PARA PERMITIR ACCESO Y/O MOSTRAR DISTINTOS ELEMENTOS SI ESTA Y NO LOGUEADO -->
+                <?php 
 
-                if (isset($_SESSION["logueado"])) {
+                    if (isset($_SESSION["logueado"])) {
 
-                    echo "<a class='nav-link mt-1' href='http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php'>".$_SESSION["logueado"]."</a>";
+                        echo "<a class='nav-link mt-1' href='http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php'>".$_SESSION["logueado"]."</a>";
 
-                    echo "<a href=''><img src='http://localhost/TiendaPHP-Ajax/img/logophp.png' width='50' height='50' alt='...' class='rounded-circle'></a>";
+                        echo "<a href=''><img src='http://localhost/TiendaPHP-Ajax/img/logophp.png' width='50' height='50' alt='...' class='rounded-circle'></a>";
 
-                }else{
+                    }else{
 
-                    echo "<a class='nav-link mt-1' href='http://localhost/TiendaPHP-Ajax/views/login.php'>No identificado</a>";
-                }
-                
-                if (isset($_SESSION["logueado"])) {
+                        echo "<a class='nav-link mt-1' href='http://localhost/TiendaPHP-Ajax/views/login.php'>No identificado</a>";
+                    }
+                    
+                    if (isset($_SESSION["logueado"])) {
 
-                    echo "<a class='nav-link mt-1' href='http://localhost/TiendaPHP-Ajax/controllers/cerrarSesion.php'> cerrar sesion</a>";
-                }
-            ?>
+                        echo "<a class='nav-link mt-1' href='http://localhost/TiendaPHP-Ajax/controllers/cerrarSesion.php'> cerrar sesion</a>";
+                    }
+                ?>
             </div>
         </div>
     </nav>
