@@ -107,13 +107,40 @@
                             <td class='align-middle'>
                                 <a class= 'btn btn-outline-success' href='http://localhost/TiendaPHP-Ajax/views/dashboard/actualizar.php?id=".$elemento['id']."'>Actualizar</a>
                             </td>
+                            <td class='align-middle'>
+                                <button type='button' onclick = modalProducto(".$elemento['id'].") class='btn btn-outline-primary btn-eliminar-produc' data-toggle='modal' data-target='#exampleModal'>
+                                    Eliminar new
+                                </button>
+                            </td>
                             </tr>";
                     $contador++;
                 }
             ?>
             </tbody>
         </table>  
-    </div>
-</div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal-producto">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+        </div>
+            </div>
+        </div>
 
 <?php include_once('../../templates/footer-page-dash-princial.php');?>
