@@ -22,7 +22,7 @@ $(document).ready(function(){
 
             if (resultado === 'true') {                
                 
-                window.location = './views/dashboard/principal.php';
+                window.location = 'http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php';
 
             }else{                    
 

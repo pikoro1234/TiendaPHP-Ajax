@@ -63,3 +63,7 @@ html body .registrate form{
     z-index: 450;
     display: none;
 }
+
+.container-mapa{
+    height: 950px;
+}

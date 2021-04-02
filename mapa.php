@@ -8,6 +8,7 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="./css/style.css">
 
     <!-- Load Leaflet from CDN -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -40,56 +41,35 @@
 </style>
 
 <body>
-	<div class="container pt-5">
-		<h4 class="text-center">Formulari de registre d'usuaris</h4>
-		<div class="row">
-			<div class="col-6">
-				<form id="form-user-register" action="" method="">															
-					<div class="form-row mb-4">
-						<div class="col-3">
-							<label for="">Tipo de Via</label>
-							<select class="custom-select" id="via" name="via">                
-								<option value="1">Calle</option>
-								<option value="2">Barrio</option>
-								<option value="3">Avenida</option>
-							</select>
-						</div>
-
-						<div class="col-7">
-							<label for="">Nombre</label>
-							<input type="text" class="form-control" id="nomCarrer" name="nomCarrer">
-						</div>
-
-						<div class="col-2">
-							<label for="">Número</label>
-							<input type="text" class="form-control" id="numCarrer" name="numCarrer">
-						</div>
-					</div>
-
-					<div class="form-row mb-4">
-						<div class="col-6">
-							<label for="">Poblacio</label>
-							<input type="text" class="form-control" id="poblacio" name="poblacio">
-						</div>
-					</div>
-					<input type="hidden" name="lat" value="" id="latitude" name="latitude"/>  
-					<input type="hidden" name="lng" value="" id="longitude" name="longitude"/>  		
-	
-					<button class="btn btn-primary" type="submit">Registrar</button>
-				</form>
-			</div>
-
-			<div class="col-6 pt-5">
-				<div id="map">
-					div pel mapa que ens trobarà la latitud i la longitud mitjançant una api de google.
-				</div>
-				<button type="button" class="btn btn-secondary mt-2" id="findLoc">Buscar adreça</button>  
-				<button type="button" class="btn btn-success mt-2" id="addressOk">Guardar</button>  
+	<div class="container pt-5 container-mapa">
+		<h1 class="text-center">Mapa de todos los productos</h1>
+		<div class="row h-100">		
+			<div class="col-12 py-5 px-5">				
+				<div id="map" class="w-100 mapa-todos-productos h-100">
+					
+				</div> 
 			</div>		
 		</div>
 
 	</div>
 
-<script src="./js/mapa.js"></script>
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script> 
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+
+<script src="./js/mapaAllProductos.js"></script>
 </body>
 </html>
