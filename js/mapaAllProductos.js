@@ -1,8 +1,6 @@
 $(document).ready(function(){
 
-    
-
-    let map, lat, lng;
+    let map;
 
     /* POST AJAX A REUTILIZAR PARA TODAS LAS PETICIONES */
     const __ajaxDatosMapa= (url) => {  
@@ -15,6 +13,22 @@ $(document).ready(function(){
         return ajax;
     }
     /* POST AJAX A REUTILIZAR PARA TODAS LAS PETICIONES */
+
+
+
+     /* POST AJAX A REUTILIZAR PARA TODAS LAS PETICIONES */
+     const __ajaxProductosSingles= (url, data) => {  
+
+        const ajax = $.ajax({
+            "method":"POST",
+            "url":url,
+            "data":data
+        })
+
+        return ajax;
+    }
+    /* POST AJAX A REUTILIZAR PARA TODAS LAS PETICIONES */
+
 
 
     /* OBTENEMOS TODOS LOS DATOS DE LOS CLIENTES */
@@ -31,19 +45,62 @@ $(document).ready(function(){
     /* OBTENEMOS TODOS LOS DATOS DE LOS CLIENTES */
 
 
+
+    /* GENERAMOS CONTENIDO DE MARKET PERSONALIZADO */
+    const generMarkerPersonalizado = (arrayElementos, usuario, idUserconst ,mark) =>{
+
+        let nombreProducto = [];
+
+        for (let index = 0; index < arrayElementos.length; index++) {
+
+            nombreProducto.push(arrayElementos[index].nombre +"</br>");
+           
+            mark.bindPopup(`<b class="text-center d-block">${usuario}</b></br> <em class="text-primary mb-3">el id es: ${idUserconst}</em></br></br> <span class="text-center d-block mb-2 text-success">Mis Productos</span><b>${nombreProducto}</b></br>`).openPopup(); 
+        }
+
+    }
+    /* GENERAMOS CONTENIDO DE MARKET PERSONALIZADO */
+
+
+    /* MIS PRODUCTOS POR CADA MARKER */
+    const misProductosMarker = (user, id, mark) =>{        
+
+        let idUsuario = "id="+id;
+
+        __ajaxProductosSingles("./modelsJS/productosAllMapa.php",idUsuario)
+        .done((info) =>{
+
+            let productos = JSON.parse(info);
+
+            generMarkerPersonalizado(productos, user, id,mark);
+        })
+    }
+    /* MIS PRODUCTOS POR CADA MARKER */
+
+
+
+    /* LISTADO DE PRODUCTOS EN EL MARKER */
+    const productosMarker = (mark, user, idUser) =>{
+    
+        misProductosMarker(user, idUser, mark);
+
+    }
+    /* LISTADO DE PRODUCTOS EN EL MARKER */
+
+
     /* CONSTRUIMOS LOS MARKERS DE LOS PRODUCTOS */
-    const generadorMarker = (lat, longi, user) =>{
-        console.log("las lat son"+lat+" - "+longi+" - "+user);
+    const generadorMarker = (lat, longi, user, idUser) =>{
 
         let marker = L.marker([lat, longi]).addTo(map);
-        
+
+        productosMarker(marker, user, idUser);
+
     }
     /* CONSTRUIMOS LOS MARKERS DE LOS PRODUCTOS */
 
+
     /* OBTENEMOS LATITUD Y LONGITUD */
     const obtenerLatiLong = (datos) =>{
-
-        console.log(datos);
 
         for (const property in datos) {
 
@@ -53,11 +110,15 @@ $(document).ready(function(){
 
             let longitud = datos[property].longitud;
 
-            generadorMarker(latitud, longitud, nick);
-            /* console.log(`${property}: ${latitud} - ${longitud}`); */
-          }
+            let idUser = datos[property].id;
+
+            generadorMarker(latitud, longitud, nick, idUser);
+            
+        }
     }
     /* OBTENEMOS LATITUD Y LONGITUD */
+
+
 
     /* INICIALIZACION DEL MAPA */
     const loadMap = () =>{
@@ -69,65 +130,7 @@ $(document).ready(function(){
         consultaDatos();
     }
     /* INICIALIZACION DEL MAPA */
+
     loadMap();
-
-
-    
-
-
-    /* select latitud,longitud,nick_user from clientes */
-
-    /*const direcciones = () =>{
-
-        const tipoVia = $("#via").val();
-
-        const nombreCalle = $("#nomCarrer").val();
-
-        const numeroCalle = $("#numCarrer").val();
-
-        const poblacion = $("#poblacio").val();
-
-        const address = `${tipoVia} ${nombreCalle} ${numeroCalle} ${poblacion}`;
-
-        return address;
-
-    }
-
-    const generarMarker = (lat, long) =>{
-
-        let marker = L.marker([lat, long]).addTo(map);
-    }
-
-    const geocoderDirecciones = () =>{
-
-        const direccion = direcciones();
-
-        const latInsert = $('#latCrear');
-
-        const longInsert = $('#longCrear');
-
-        L.esri.Geocoding.geocode().text(direccion).run( (err, results, response) =>{
-
-            if (!err) {
-
-                lat = results.results[0].latlng.lat;
-
-                lng = results.results[0].latlng.lng;
-
-                latInsert.val(lat);
-
-                longInsert.val(lng);
-
-                console.log("lat = "+lat+" , lng = "+lng);
-
-                generarMarker(lat, lng);        
-            }
-        })
-    }
-
-    $("#findLoc").on('click', () =>{
-
-        geocoderDirecciones();
-    }) */
     
 })

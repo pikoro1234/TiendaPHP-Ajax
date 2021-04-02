@@ -41,7 +41,7 @@
 </style>
 
 <body>
-	<div class="container pt-5 container-mapa">
+	<div class="container pt-5 container-mapa">    
 		<h1 class="text-center">Mapa de todos los productos</h1>
 		<div class="row h-100">		
 			<div class="col-12 py-5 px-5">				
