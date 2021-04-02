@@ -1,25 +1,5 @@
 <?php 
    
-    function selectProductos($con,$variable){        
-
-        $resultado = array();
-
-        $sql = "SELECT * FROM producto";        
-
-        $consulta = $con->prepare($sql);
-
-        $consulta->execute();
-
-        $preCargaElementos = $consulta->get_result();
-
-        while ($row = $preCargaElementos->fetch_assoc()) {
-
-            array_push($resultado,$row);
-        }
-
-        return $resultado;
-    }
-
     /* MOSTRAMOS PRODUCTO SOLO DEPENDIENDO DEL ID DEL PRODUCTO RECIBIDO POR PARAMETRO EN SINGLEPAGE */
     function selectSinglePageProducto($con, $id){
         

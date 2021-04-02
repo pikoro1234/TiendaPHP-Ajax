@@ -5,7 +5,9 @@
 
     $conn = conexion();
 
-    function selectProductos($conn){        
+    selectProductos($conn);
+
+    function selectProductos($con){        
     
         $resultado = array();
         
@@ -22,5 +24,5 @@
             array_push($resultado,$row);
         }
         
-        echo  $resultado ;
+        echo  json_encode($resultado);
     }

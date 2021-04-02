@@ -3,9 +3,9 @@
     /* ARCHIVOS QUE NECESITAREMOS */
   include_once('templates/header.php'); 
 
-  include_once('models/conexion.php');
+  /* include_once('models/conexion.php');
 
-  include_once('./modelsJS/todosProductos.php');
+  include_once('modelsJS/todosLosProductos.php'); */
   
 ?>
 
@@ -84,13 +84,13 @@
     <?php
 
         /* GUARDAMOS CONEXION PARA ENVIARLA POR PARAMETRO */
-        $conn = conexion();
+        //$conn = conexion();
 
         /* TRAEMOS TODOS LOS PRODUCTOS A PAGINA PRINCIPAL */
-        $arrayProductos = selectProductos($conn,"");
+       // $arrayProductos = selectProductos($conn,"");
 
         /* CREAMOS UN HTML DEPENDIENDO A LOS DATOS QUE NOS RETORNE EL ARRAY E IMPRIMIMOS VALORES DE PRODUCTOS */
-        foreach($arrayProductos as $prod){
+        /* foreach($arrayProductos as $prod){
 
           echo "
                 <div class='card' style='width: 18rem; position: relative;'>";
@@ -144,7 +144,7 @@
                       <a href='http://localhost/TiendaPHP-Ajax/views/singlepage.php?param=".$prod['id']."' class='btn btn-primary'>Leer mas...</a>
                   </div>
                 </div>";
-        }
+        } */
     ?>   
   </div>
 </div><!-- fin container -->
