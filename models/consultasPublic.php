@@ -1,7 +1,7 @@
 <?php
 
     /* RETORNA ARRAY CON TODOS LOS PRODUCTOS */
-    function selectProductos($con,$variable){
+    /* function selectProductos($con,$variable){
 
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
@@ -27,10 +27,10 @@
         }
 
         return $resultado;
-    }
+    } */
 
     /* METODO PARA FILTRAR LOS PRODUCTOS RETORNA UN ARRAY FILTRADO */
-    function selectFiltradosNombre($con, $nombre){
+    /* function selectFiltradosNombre($con, $nombre){
 
         $resultado = array();
  
@@ -52,11 +52,11 @@
         }
 
         return $resultado;
-    }
+    } */
 
 
     /* DEVUELVE UN ARRAY FILTRADO POR CATEGORIA AL INDEX */
-    function selectFiltradosCategoria($con, $categoria){
+    /* function selectFiltradosCategoria($con, $categoria){
 
         $resultado = array();
             
@@ -78,11 +78,11 @@
         }
 
         return $resultado;
-    }
+    } */
 
     
     /* DEVUELVE UN ARRAY FILTRADO DEACUERDO CON LOS DOS PARAMETROS DE LIMITE */
-    function selectFiltradosBettween($con,$primero,$segundo){
+    /* function selectFiltradosBettween($con,$primero,$segundo){
 
         $resultado = array();
 
@@ -106,11 +106,11 @@
         }
 
         return $resultado;
-    }
+    } */
 
 
     /* MOSTRAMOS PRODUCTO SOLO DEPENDIENDO DEL ID DEL PRODUCTO RECIBIDO POR PARAMETRO EN SINGLEPAGE */
-    function selectSinglePageProducto($con, $id){
+    /* function selectSinglePageProducto($con, $id){
         
         $resultado = array();
 
@@ -132,11 +132,11 @@
         }
 
         return $resultado;
-    }
+    } */
 
 
     /* CONTADOR DE VISITAS AL VISITAR SINGLEPAGE EJECUTA LA FUNCION LA CUAL HACE UPDATE A LA BASE DE DATOS */
-    function contadorVisitas($con,$parametro,$valor){
+    /* function contadorVisitas($con,$parametro,$valor){
 
         $valorVisitas = $valor;
 
@@ -150,6 +150,6 @@
 
         mysqli_stmt_execute($consulta);
 
-    }
+    } */
 
 ?>

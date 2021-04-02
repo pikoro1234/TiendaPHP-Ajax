@@ -7,7 +7,7 @@
 
     require_once('../../models/conexionPDO.php');
 
-    require_once('../../models/consultas.php');
+    require_once('../../modelsJS/single-page-cont-visitas.php');
 
     /* VERIFICAMOS SI ESTA LOGUEADO, SI NO LO ESTA LO SACAMOS HACIA EL LOGIN */
     if (!isset($_SESSION["logueado"])) {

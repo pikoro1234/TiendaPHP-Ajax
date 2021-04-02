@@ -3,7 +3,7 @@
 
     require_once('../../models/conexionPDO.php');
 
-    require_once('../../models/consultas.php');
+    require_once('../../modelsJS/single-page-cont-visitas.php');
 
     /* VERIFICAMOS SI EXISTE LA SESSION SI NO EXISTE REDIRECCIONAMOS A LOGIN */
     if (!isset($_SESSION["logueado"])) {

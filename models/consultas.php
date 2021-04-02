@@ -2,7 +2,7 @@
 
 
     /* PARA VERIFICAR SI EL USUARIO EXISTE EN LA BASE DE DATOS USER Y PASSWORD */
-    function verificarUserRegistrado($con,$user,$pass){
+    /* function verificarUserRegistrado($con,$user,$pass){
 
         //VARIABLES GLOBALES
         $contraOriginal = $pass;
@@ -28,9 +28,9 @@
 
             $auxPassword = $pass;
         }
-
+ */
         //VALIDAMOS SI LOS DATOS DEL USUARIO SON CORRECTO REDIRECCIONAMOS AL DASHBOARD Y SI NO EXISTE VOLVEMOS A PEDIRLE LAS CREDENCIALES
-        if (password_verify($contraOriginal, $auxPassword)) {
+        /* if (password_verify($contraOriginal, $auxPassword)) {
 
             session_start();
 
@@ -43,11 +43,11 @@
            
             header('Location: http://localhost/TiendaPHP-Ajax/views/login.php?error=error');
         }
-    }
+    } */
 
 
     /* REGISTRAR NUEVO USUARIO A LA BASE DE DATOS */
-    function insertarCliente($con,$nick,$contrasenha,$nombre,$correo,$telefono,$direccion,$ciudad,$recuerdame,$foto){
+    /* function insertarCliente($con,$nick,$contrasenha,$nombre,$correo,$telefono,$direccion,$ciudad,$recuerdame,$foto){
 
 
         // echo "datos ".$nick." ".$contrasenha." ".$nombre." ".$correo." ".$telefono." ".$direccion." ".$ciudad." ".$recuerdame." ".$foto;
@@ -119,10 +119,10 @@
             }
         }
     }
-
+ */
 
     /* FUNCION AUXILIAR PARA RECOGER ID DEL CURRENT USER PARA USARLA EN SELECCIONAR MIS PRODUCTOS */
-    function selectSessionId($con,$user){
+    /* function selectSessionId($con,$user){
 
         $idUsuario = "--";
 
@@ -144,11 +144,11 @@
         }
 
         return $idUsuario;
-    }
+    } */
 
 
     /* SELECCIONAMOS MIS PRODUCTOS PARA MOSTRARLOS EN EL DASHBOARD Y USAMOS EL ID RECOGIDO ANTERIORMENTE RETORNA ARRAY DE MIS PRODUCTOS */
-    function selectMisProductos($con,$usuario){
+    /* function selectMisProductos($con,$usuario){
 
         $arrayMisProductos = array();
 
@@ -172,11 +172,11 @@
         }
 
         return $arrayMisProductos;
-    }
+    } */
 
 
     /* CREAMOS PRODUCTO PASAMOS COMO PARAMETRO ID CURRENT USER */
-    function insertarProducto($con,$user,$foto1,$foto2,$foto3,$nombre,$precio,$descripcion,$peso,$dimension,$marca,$color,$envase,$categoria,$estado){
+   /*  function insertarProducto($con,$user,$foto1,$foto2,$foto3,$nombre,$precio,$descripcion,$peso,$dimension,$marca,$color,$envase,$categoria,$estado){
 
         $fecha = new DateTime();
 
@@ -245,7 +245,7 @@
         $consultaPreparada->bind_param("issssdsssssssssii",$valor1,$valor2,$valor3,$valor4,$valor5,$valor6,$valor7,$valor8,$valor9,$valor10,$valor11,$valor12,$valor13,$valor14,$valor15,$valor16,$valor17);
 
         /* VALIDAMOS PARA ENVIAR MENSAJE DE INSERCION O NO INSERCION DEL PRODUCTO */
-        if($consultaPreparada->execute()){
+        /*if($consultaPreparada->execute()){
 
             return true;
 
@@ -254,10 +254,10 @@
             return false;
         }
     }
-
+ */
 
     /* VERIFICAMOS PRODUCTO ANTES DE ELIMINARLO */ // ------ USO DE PDO
-    function verificarProducto($conPDO, $idEliminar){
+    /* function verificarProducto($conPDO, $idEliminar){
 
         try {
 
@@ -285,9 +285,9 @@
         }
 
     }
-
+ */
     /* ELIMINAMOS EL PRODUCTO YA VERIFICADO QUE EXISTE */ // ----- USO DE PDO
-    function eliminarProducto($conPDO, $idEliminar){
+   /*  function eliminarProducto($conPDO, $idEliminar){
 
         try {
 
@@ -309,11 +309,11 @@
             die($e->getMessage());
         }
 
-    }
+    } */
 
 
     /* TRAER MIS PRODUCTOS PARA PAGINA ACTUALIZAR */ // ---- USO DE PDO
-    function traerMisProductos($conPDO, $idActualiar){
+   /*  function traerMisProductos($conPDO, $idActualiar){
 
         $arrayMisProductosPDO = array();
 
@@ -344,10 +344,10 @@
             die($e->getMessage());
         }
 
-    }
+    } */
 
     /* ACTUALIZAMOS EL PRODUCTO YA COMPROBADO */ // ---  USO DE PDO
-    function actualizarMiProducto($conPDO, $id, $nombre, $precio, $descripcion, $peso, $dimension, $marca, $color, $envase, $categoria, $estado){
+    /* function actualizarMiProducto($conPDO, $id, $nombre, $precio, $descripcion, $peso, $dimension, $marca, $color, $envase, $categoria, $estado){
 
         try {
 
@@ -365,10 +365,10 @@
         } catch (PDOException $e) {
             
             die($e->getMessage());
-        } 
+        }  */
         
         /* consulta UPDATE  producto SET descripcion = 'descripcion actualizada', marca='la zanahoria' WHERE id = 49 LIMIT 1*/
 
        //return $nombre."<br>".$precio."<br>".$descripcion."<br>".$peso."<br>".$dimension."<br>".$marca."<br>".$color."<br>".$envase."<br>".$categoria."<br>".$estado;
-    }
+    //}
 ?>
