@@ -194,6 +194,15 @@ $(document).ready(function(){
         .done((info)=>{
             
             console.log(info);
+
+            let resultado = JSON.parse(info).result;
+
+            if (resultado === 'true') { 
+                
+                $(".alerta-flotante").css("display", "block");
+
+                $('.alerta-flotante').hide(6000);
+            }
         })
     }
     /* ENVIO DEL FORMULARIO A PHP */
@@ -225,7 +234,7 @@ $(document).ready(function(){
 
             if (focusInput(nombreProducto) && focusInput(precioProducto) && focusInput(categoriaProducto)) {
                     
-                envioFormulario();              
+                envioFormulario();                                  
 
             }else{            
 

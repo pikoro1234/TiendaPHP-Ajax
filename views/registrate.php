@@ -37,6 +37,8 @@
 
     <div class="container registrate m-auto d-flex justify-content-center w-100">
 
+        <div class=" px-5 py-5 alert alert-success alerta-flotante" role="alert">Usuario registrado correctamente</div>
+
         <form action="http://localhost/TiendaPHP-Ajax/controllers/registro.php" class="bg-white p-5 w-100 mt-5 mb-5" method="POST">
             <h3 class="text-center" style="letter-spacing: 3px;">REGISTRATE</h3>
             <div class="contenedor-datos-form d-flex flex-wrap">

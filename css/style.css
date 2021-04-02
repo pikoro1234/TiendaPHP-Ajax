@@ -55,3 +55,11 @@ html body .registrate form{
 .focusElemento{
     border-color: rgb(236, 26, 26);
 }
+
+.alerta-flotante{
+    position: fixed;
+    top: 37px;
+    right: 145px;
+    z-index: 450;
+    display: none;
+}

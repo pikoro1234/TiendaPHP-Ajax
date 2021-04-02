@@ -157,4 +157,29 @@
         }
 
     }
+
+    /* ELIMINAMOS EL PRODUCTO YA VERIFICADO QUE EXISTE */ // ----- USO DE PDO
+    function eliminarProducto($conPDO, $idEliminar){
+
+        try {
+
+            $sql = "DELETE FROM producto where id = ? LIMIT 1";
+
+            $statement = $conPDO->prepare($sql);
+
+            $statement->execute(array($idEliminar));
+
+            if ($statement->rowCount() > 0) {
+
+                return true;
+            }
+
+            return false;
+
+        } catch (PDOException $e) {
+            
+            die($e->getMessage());
+        }
+
+    }
 ?>

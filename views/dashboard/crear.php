@@ -17,6 +17,8 @@
     <?php require_once('../../templates/sidebarsecond.php');?>
 
     <div class="content-rigth p-5">
+
+        <div class=" px-5 py-5 alert alert-success alerta-flotante" role="alert">Producto creado verificalo en tu dashboard</div>
         
         <form action="http://localhost/TiendaPHP-Ajax/controllers/crearProducto.php" id="crearForm" method="POST" class="p-5 bg-white m-5" enctype="multipart/form-data">
             

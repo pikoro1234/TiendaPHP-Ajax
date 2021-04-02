@@ -121,11 +121,15 @@ function insertarProducto($con,$user,$foto1,$foto2,$foto3,$nombre,$precio,$descr
 
         move_uploaded_file($_FILES['image3']['tmp_name'],$fichero3);
 
-        echo "true";
+        $error['result']="true";
+
+        echo json_encode($error);
 
     }else{
 
-        echo "false";
+        $error['result']="false";
+
+        echo json_encode($error);
     }
 }
 
