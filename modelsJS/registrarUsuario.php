@@ -50,7 +50,9 @@ function insertarCliente($con,$nick,$contrasenha,$nombre,$correo,$telefono,$dire
     //VALIDAMOS SI EXISTE EL USUARIO EN LA BASE DE DATOS
     if ($filas > 0) {
 
-        echo "el usuario existe";
+        $error['result']="false";
+
+        echo json_encode($error);
 
     }else{
         //SI NO EXISTE EL USUARIO REALIZAMOS LA INSERCION
@@ -94,14 +96,16 @@ function insertarCliente($con,$nick,$contrasenha,$nombre,$correo,$telefono,$dire
 
         //REGISTRAMOS AL CLIENTE Y LUEGO LO REDIRECCIONAMOS AL INDEX
         if($consultaPreparada->execute()){
-            
-            // header('Location: http://localhost/Tiendaphp/index.php');
-            /* header('Location: http://localhost/TiendaPHP-Ajax/views/login.php'); */
+
+            $error['result']="true";
+
+            echo json_encode($error);                        
 
         }else{
 
-            /* header('Location: http://localhost/TiendaPHP-Ajax/views/404.php'); */
-            // echo "no se pudo insertar revisa los datos" . mysqli_error($con);
+            $error['result']="false";
+
+            echo json_encode($error);
         }
     }
 }

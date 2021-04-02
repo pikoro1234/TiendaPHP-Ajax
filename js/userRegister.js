@@ -180,6 +180,21 @@ $(document).ready(function(){
         __ajax("../modelsJS/registrarUsuario.php", valores)
         .done((info) =>{
             console.log(info);
+
+            let resultado = JSON.parse(info).result;
+
+            if (resultado === 'true') { 
+                
+                $(".alerta-flotante").css("display", "block");
+
+                $('.alerta-flotante').hide(7000);
+
+            }else{
+
+                $(".alerta-flotante-false").css("display", "block");
+
+                $('.alerta-flotante-false').hide(7000);
+            }   
         })
     }
     /* FUNCION QUE ENVIA LOS DATOS DEL FORMULARIO */
@@ -209,14 +224,7 @@ $(document).ready(function(){
         if (focusInput(userNick) && focusInput(password) && focusInput(nombreUser) && isValidEmail(emailUser)
         && dniValidacion(dniUser) && focusInput(latitud) && focusInput(longitud)) {
 
-
-            /* if ($(latitud).val() === "" && $(longitud).val() === "") {
-
-                alert(" esta vacio")
-
-            }else{*/
-                envioFormulario(userNick, password, nombreUser, dniUser, emailUser, phoneUser, direccion, ciudad, latitud, longitud);
-            /* } */
+            envioFormulario(userNick, password, nombreUser, dniUser, emailUser, phoneUser, direccion, ciudad, latitud, longitud);        
             
         }else{
 

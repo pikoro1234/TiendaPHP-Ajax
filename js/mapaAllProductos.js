@@ -62,6 +62,17 @@ $(document).ready(function(){
     /* GENERAMOS CONTENIDO DE MARKET PERSONALIZADO */
 
 
+
+    /* GENERAMOS CONTENIDO DE MARKET PERSONALIZADO */
+    const generMarkerVacio = (usuario, idUserconst ,mark) =>{
+
+        mark.bindPopup(`<b class="text-center d-block">${usuario}</b></br> <em class="text-primary mb-3">el id es: ${idUserconst}</em></br></br> <span class="text-center d-block mb-2 text-danger">Aun no tienes productos</b></br>`).openPopup(); 
+
+    }
+    /* GENERAMOS CONTENIDO DE MARKET PERSONALIZADO */
+
+
+
     /* MIS PRODUCTOS POR CADA MARKER */
     const misProductosMarker = (user, id, mark) =>{        
 
@@ -72,7 +83,14 @@ $(document).ready(function(){
 
             let productos = JSON.parse(info);
 
-            generMarkerPersonalizado(productos, user, id,mark);
+            if (productos.length > 0) {
+            
+                generMarkerPersonalizado(productos, user, id,mark);
+
+            }else{
+
+                generMarkerVacio( user, id,mark);
+            }            
         })
     }
     /* MIS PRODUCTOS POR CADA MARKER */

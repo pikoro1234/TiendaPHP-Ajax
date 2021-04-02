@@ -64,6 +64,14 @@ html body .registrate form{
     display: none;
 }
 
+.alerta-flotante-false{
+    position: fixed;
+    top: 37px;
+    right: 145px;
+    z-index: 450;
+    display: none;
+}
+
 .container-mapa{
     height: 950px;
 }
