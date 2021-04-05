@@ -5,8 +5,6 @@
 
     require_once('../../models/conexion.php');
 
-    require_once('../../models/conexionPDO.php');
-
     require_once('../../modelsJS/single-page-cont-visitas.php');
 
     /* VERIFICAMOS SI ESTA LOGUEADO, SI NO LO ESTA LO SACAMOS HACIA EL LOGIN */
@@ -18,8 +16,6 @@
 
     $conn = conexion();  
 
-    $connPDO = conexionPDO();
-
     /* FUNCION QUE TRAE MIS PRODUCTOS DE LA BASE DE DATOS PASANDO MI ID */
     $arrayProductos = selectMisProductos($conn,$_SESSION["logueado"]);
 ?>
@@ -28,36 +24,6 @@
 
     <!-- INCLUIMOS SIDEBAR SOLO POR ESTETICA NO ES NECESARIO -->
     <?php require_once('../../templates/sidebarsecond.php');?>
-
-    <?php 
-        
-        /* VERIFICAMOS SI EXISTE EL PARAMETRO ELIMINAR EN LA URL */
-        if (isset($_GET['eliminar'])) {
-
-            $idEliminar = $_GET['eliminar'];
-
-            $productoVerificado = verificarProducto($connPDO, $idEliminar);
-
-            /* SI EL PRODUCTO ID EXISTE EN LA BASE DE DATOS DEJA ELIMINAR SI LO HACE MEDIANTE LA URL SOLO EJECUTA UN MENSAJE DE ERROR*/
-            if (count($productoVerificado) > 0) {
-
-                $eliminarProducto = eliminarProducto($connPDO, $idEliminar);
-
-                /* SI ELIMINA BIEN EL PRODUCTO NOS REDIRECCIONA AL AREA PRINCIPAL */
-                if ($eliminarProducto) {
-
-                    print "<script>window.location = 'http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php';</script>";
-                    // header('Location: http://localhost/Tiendaphp/views/dashboard/principal.php');
-                }
-                
-            }else{ 
-
-                echo "<div class='alert alert-danger position-absolute p-4' style='right:40%; top:0px' role='alert'><strong>Acción no se puede realizar por medio URL</strong></div>";
-                        
-            }
-
-        }?> 
-
    
 
     <div class="content-rigth p-5">
@@ -100,18 +66,15 @@
                             <td style='vertical-align: inherit;'>".$elemento['numero_visitas']."</td>
                             <td>
                                 <img style='width: 250px;height: 150px;' src='".$elemento['imagen_front']."' class='img-thumbnail'  alt='...'>
-                            </td>                                                        
-                            <td class='align-middle'>
-                                <a class= 'btn btn-outline-secondary' href='http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php?eliminar=".$elemento['id']."'>Eliminar</a>
-                            </td>
-                            <td class='align-middle'>
-                                <a class= 'btn btn-outline-success' href='http://localhost/TiendaPHP-Ajax/views/dashboard/actualizar.php?id=".$elemento['id']."'>Actualizar</a>
-                            </td>
+                            </td>   
                             <td class='align-middle'>
                                 <button type='button' onclick = modalProducto(".$elemento['id'].") class='btn btn-outline-primary btn-eliminar-produc' data-toggle='modal' data-target='#exampleModal'>
-                                    Eliminar new
+                                    Eliminar
                                 </button>
-                            </td>
+                            </td>                                                                                
+                            <td class='align-middle'>
+                                <a class= 'btn btn-outline-success' href='http://localhost/TiendaPHP-Ajax/views/dashboard/actualizar.php?id=".$elemento['id']."'>Actualizar</a>
+                            </td>                            
                             </tr>";
                     $contador++;
                 }
