@@ -31,27 +31,27 @@ const generadorModal = (idProducto) =>{
 
     xhttp.onreadystatechange = function() {
 
-      if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState == 4 && this.status == 200) {
 
-        if (this.responseText === "true") {
+            if (this.responseText === "true") {
 
-            /* $('#exampleModal').css('display', 'none');
+                /* $('#exampleModal').css('display', 'none');
 
-            $('#exampleModal').attr('aria-hidden','true');
+                $('#exampleModal').attr('aria-hidden','true');
 
-            $('#exampleModal').attr('aria-modal','false');
+                $('#exampleModal').attr('aria-modal','false');
 
-            $('btn-eliminar-producto').attr('data-dismiss','modal');
+                $('btn-eliminar-producto').attr('data-dismiss','modal');
 
-            $('btn-eliminar-producto').addClass('close');
+                $('btn-eliminar-producto').addClass('close');
 
-            $('#exampleModal').removeClass('show');
+                $('#exampleModal').removeClass('show');
 
-            $('.modal-backdrop').css('display','none');  */
+                $('.modal-backdrop').css('display','none');  */
 
-            window.location = 'http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php';
+                window.location = 'http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php';
+            }
         }
-      }
     };
 
     xhttp.open("POST", "http://localhost/TiendaPHP-Ajax/modelsJS/eliminarProducto.php", true);

@@ -259,11 +259,11 @@
                 </div>
             </div>
         
-            <button type="submit" class="btn btn-primary mt-5">Actualizar</button>
+            <button type="submit" id="btnActualizarPro" class="btn btn-primary mt-5">Actualizar</button>
             
         </form>
         
     </div>
 </div>
 
-<?php include_once('../../templates/footer.php');?>
+<?php include_once('../../templates/footerActualizar.php');?>
