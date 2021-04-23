@@ -1,7 +1,6 @@
 <?php 
       /* INCLUIMOS FICHEROS QUE UTILIZAREMOS */
       include_once("../models/conexion.php");
-      include_once("../models/consultas.php");
 ?>
 
 <head>
@@ -32,11 +31,6 @@
               <input type="password" class="form-control" name="passRegister" id="passRegister" placeholder="contraseña" required>
               <small id="emailHelp" class="form-text text-muted">ingresa tu contraseña.</small>
             </div>
-
-            <!-- <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" name="recuerdame" id="recuerdame" value = "si">
-              <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
-            </div> -->
 
             <div class="form-group">
               <!-- VALIDACION DE USUARIO SI NO ESTABLECE EL USER Y EL PASSWORD CORRECTO MUESTRA MENSAJE -->

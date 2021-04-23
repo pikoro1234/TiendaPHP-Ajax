@@ -48,9 +48,12 @@
     <?php require_once('../../templates/sidebarsecond.php');?>
 
     <div class="content-rigth p-5">
+
+        <div class=" px-5 py-5 alert alert-success alerta-flotante" role="alert">Producto Actualizado!!!!</div>
+
     <input type="text" name="idProducto" id="idProducto" value="<?php echo $idActualizar;?>">
         
-        <form action="http://localhost/TiendaPHP-Ajax/controllers/actualizarProducto.php" method="POST" class="p-5 bg-white m-5">
+        <form action="" method="" class="p-5 bg-white m-5">
             
             <h1 class="text-center mb-5">Actualizar Producto (<strong><?php echo $idActualizar ?></strong>)</h1>   
 
@@ -260,7 +263,7 @@
                 </div>
             </div>
         
-            <button type="submit" id="btnActualizarPro" class="btn btn-primary mt-5">Actualizar</button>
+            <button type="button" id="btnActualizarPro" class="btn btn-primary mt-5">Actualizar</button>
             
         </form>
         

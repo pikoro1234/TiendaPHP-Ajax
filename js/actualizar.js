@@ -1,58 +1,110 @@
 $(document).ready(function(){
 
-    const idProducto = $('#idProducto').val();
-    const nombreProducto = $('#nombreProducto').val();
-    const precioProducto = $('#precio').val();
-    const descripcionProducto = $('#descripcion').val();
-    const pesoProducto = $('#peso').val();
-    const dimensionProducto = $('#dimension').val();
-    const marcaProducto = $('#marca').val();
-    const colorProducto = $('#color').val();
-    const envaseProducto = $('#envase').val();
-    const categoriaProducto = $('#categoria').val();
-    const estadoProducto = $('#estado').val();
+    let idProducto = $('#idProducto');
 
+    let nombreProducto = $('#nombreProducto');
+
+    let precioProducto = $('#precio');
+
+    let descripcionProducto = $('#descripcion');
+
+    let pesoProducto = $('#peso');
+
+    let dimensionProducto = $('#dimension');
+
+    let marcaProducto = $('#marca');
+
+    let colorProducto = $('#color');
+
+    let envaseProducto = $('#envase');
+
+    let categoriaProducto = $('#categoria');
+
+    let estadoProducto = $('#estado');
+
+
+
+    /* FOCUS PARA LOS ERRORES */
+    const focusInput = (elemento) =>{
+
+        if ($(elemento).val() == "") {
+
+            generadorErrores(elemento);
+
+            return false;    
+            
+        }else{
+
+            limpiadorErrores(elemento);
+
+            return true;                                    
+        }
+    }
+    /* FOCUS PARA LOS ERRORES */
+
+
+    /* FUNCION QUE GENERA LOS ERRORES DE INPUTS */
+    const generadorErrores = (input) =>{
+
+        if ($(input).val() == "") {
+
+            $(input).addClass('focusElemento');
+
+            $(input).after(`<p class="text-danger texto-alerta">el campo no debe quedar vacio</p>`);
+
+            $('.texto-alerta').css('display','block');
+        }
+    }
+    /* FUNCION QUE GENERA LOS ERRORES DE INPUTS */
+
+
+    /* LIMPIAMOS LOS INPUT CUANDO TODO ESTA VALIDADO */
+    const limpiadorErrores = (input) =>{       
+
+        $(".texto-alerta").remove();
+
+        $(input).removeClass('focusElemento');
+    }
+    /* LIMPIAMOS LOS INPUT CUANDO TODO ESTA VALIDADO */
+
+
+
+    /* ENVIO DEL FORMULARIO */
     $('#btnActualizarPro').on('click',(e) =>{
-
-        /* function actualizarMiProducto($conPDO, $id, $nombre, $precio, $descripcion, $peso, $dimension, $marca, $color, $envase, $categoria, $estado){*/
-
-        envioFormularioActualizar(idProducto,nombreProducto,precioProducto,descripcionProducto,pesoProducto,dimensionProducto,marcaProducto,colorProducto,envaseProducto,categoriaProducto,estadoProducto);
-
-        /* console.log("id -- "+idProducto+
-        "nombre -- "+nombreProducto+
-        "precio -- "+precioProducto+
-        "descripcion -- "+descripcionProducto+
-        "peso -- "+pesoProducto+
-        "dimension -- "+dimensionProducto+
-        "marca -- "+marcaProducto+
-        "color -- "+colorProducto+
-        "envase -- "+envaseProducto+
-        "cat -- "+categoriaProducto+
-        "esta -- "+estadoProducto); */
 
         e.preventDefault();
 
+        if (focusInput(nombreProducto) && focusInput(precioProducto) && focusInput(categoriaProducto) && focusInput(estadoProducto)) {
+
+            envioFormularioActualizar(idProducto,nombreProducto,precioProducto,descripcionProducto,pesoProducto,dimensionProducto,marcaProducto,colorProducto,envaseProducto,categoriaProducto,estadoProducto);
+            
+        }else{            
+
+            alert('verifica los nuevos datos');
+        }
+
     })
+    /* ENVIO DEL FORMULARIO */
 
 
     /* FUNCION QUE ENVIA LOS DATOS DEL FORMULARIO */
     const envioFormularioActualizar = ( id,nombre,precio,descripcion,peso,dimension,marca,color,envase,categoria,estado ) =>{    
         
         const valores = {
-            "idProducto" : id,
-            "nombreProducto" : nombre,
-            "precioProducto" : precio,
-            "descripcionProducto" : descripcion,
-            "pesoProducto" : peso,
-            "dimensionProducto" : dimension,
-            "marcaProducto" : marca,
-            "colorProducto" : color,
-            "envaseProducto" : envase,
-            "categoriaProducto" : categoria,
-            "estadoProducto" : estado
+            "idProducto" : $(id).val(),
+            "nombreProducto" : $(nombre).val(),
+            "precioProducto" : $(precio).val(),
+            "descripcionProducto" : $(descripcion).val(),
+            "pesoProducto" : $(peso).val(),
+            "dimensionProducto" : $(dimension).val(),
+            "marcaProducto" : $(marca).val(),
+            "colorProducto" : $(color).val(),
+            "envaseProducto" : $(envase).val(),
+            "categoriaProducto" : $(categoria).val(),
+            "estadoProducto" : $(estado).val()
         }
 
-        __ajax("../modelsJS/registrarUsuario.php", valores)
+        __ajaxActualizar("../../modelsJS/actualizarProd.php", valores)
         .done((info) =>{
             console.log(info);
 
@@ -62,16 +114,11 @@ $(document).ready(function(){
                 
                 $(".alerta-flotante").css("display", "block");
 
-                $('.alerta-flotante').hide(7000);
-
-            }else{
-
-                $(".alerta-flotante-false").css("display", "block");
-
-                $('.alerta-flotante-false').hide(7000);
-            }   
+                $('.alerta-flotante').hide(6000);
+            }
         })
     }
+    /* FUNCION QUE ENVIA LOS DATOS DEL FORMULARIO */
 
 
 

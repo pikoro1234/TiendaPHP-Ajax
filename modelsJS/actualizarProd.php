@@ -1,34 +1,65 @@
 <?php
 
-echo "aqui el archivo actualizar js";
+/* REQUERIMOS LA CONEXION */
+require_once('../models/conexionPDO.php');
+
+$conn = conexionPDO();
+
+$idProducto = $_POST['idProducto'];
+
+$nombreProducto = $_POST['nombreProducto'];
+
+$precioProducto = $_POST['precioProducto'];
+
+$descripcionProducto = $_POST['descripcionProducto'];
+
+$pesoProducto = $_POST['pesoProducto'];
+
+$dimensionProducto = $_POST['dimensionProducto'];
+
+$marcaProducto = $_POST['marcaProducto'];
+
+$colorProducto = $_POST['colorProducto'];
+
+$envaseProducto = $_POST['envaseProducto'];
+
+$categoriaProducto = $_POST['categoriaProducto'];
+
+$estadoProducto = $_POST['estadoProducto'];
+
+actualizarMiProducto($conn,$idProducto,$nombreProducto,$precioProducto,$descripcionProducto,$pesoProducto,$dimensionProducto,$marcaProducto,$colorProducto,$envaseProducto,$categoriaProducto,$estadoProducto);
+
+/* ACTUALIZAMOS EL PRODUCTO YA COMPROBADO */ // ---  USO DE PDO
+function actualizarMiProducto($conPDO, $id, $nombre, $precio, $descripcion, $peso, $dimension, $marca, $color, $envase, $categoria, $estado){
+
+    try {
+
+        $sql = "UPDATE  producto SET nombre = ?, precio = ?, descripcion = ?, peso = ?, dimension = ?, marca= ?, color = ?, envase = ?, categoria = ?, estado = ? WHERE id = ?";
+
+        $statement = $conPDO->prepare($sql);
 
 
- /* ACTUALIZAMOS EL PRODUCTO YA COMPROBADO */ // ---  USO DE PDO
-    /* function actualizarMiProducto($conPDO, $id, $nombre, $precio, $descripcion, $peso, $dimension, $marca, $color, $envase, $categoria, $estado){
+        $statement->execute(array($nombre, $precio, $descripcion, $peso, $dimension, $marca, $color, $envase, $categoria, $estado,$id));
 
-        try {
 
-            $sql = "UPDATE  producto SET nombre = ?, precio = ?, descripcion = ?, peso = ?, dimension = ?, marca= ?, color = ?, envase = ?, categoria = ?, estado = ? WHERE id = ? LIMIT 1";
-
-            $statement = $conPDO->prepare($sql);
-
-            $statement->execute(array($nombre, $precio, $descripcion, $peso, $dimension, $marca, $color, $envase, $categoria, $estado,$id));
-
-            if ($statement->rowCount() > 0) {
-                
-                return true;
-            }
-
-        } catch (PDOException $e) {
+        if ($statement->rowCount() > 0) {
             
-            die($e->getMessage());
-        }  */
+            $error['result']="true";
+
+            echo json_encode($error);
+
+        }else{
+            
+            $error['result']="false";
+
+            echo json_encode($error);
+
+        }
+
+    } catch (PDOException $e) {
         
-        /* consulta UPDATE  producto SET descripcion = 'descripcion actualizada', marca='la zanahoria' WHERE id = 49 LIMIT 1*/
-
-       //return $nombre."<br>".$precio."<br>".$descripcion."<br>".$peso."<br>".$dimension."<br>".$marca."<br>".$color."<br>".$envase."<br>".$categoria."<br>".$estado;
-    //}
-
-
+        die($e->getMessage());
+    } 
+}
 
 ?>

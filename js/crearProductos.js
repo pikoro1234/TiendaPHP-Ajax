@@ -232,7 +232,7 @@ $(document).ready(function(){
 
         if (validacionFotos(foto1, foto2, foto3)) {
 
-            if (focusInput(nombreProducto) && focusInput(precioProducto) && focusInput(categoriaProducto)) {
+            if (focusInput(nombreProducto) && focusInput(precioProducto) && focusInput(categoriaProducto) && focusInput(estadoProducto)) {
                     
                 envioFormulario();                                  
 
