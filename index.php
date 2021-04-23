@@ -1,11 +1,6 @@
 <?php 
 
-    /* ARCHIVOS QUE NECESITAREMOS */
   include_once('templates/header.php'); 
-
-  /* include_once('models/conexion.php');
-
-  include_once('modelsJS/todosLosProductos.php'); */
   
 ?>
 
@@ -80,72 +75,6 @@
   </div>
     
   <div class="content-productos d-flex mb-5">
-
-    <?php
-
-        /* GUARDAMOS CONEXION PARA ENVIARLA POR PARAMETRO */
-        //$conn = conexion();
-
-        /* TRAEMOS TODOS LOS PRODUCTOS A PAGINA PRINCIPAL */
-       // $arrayProductos = selectProductos($conn,"");
-
-        /* CREAMOS UN HTML DEPENDIENDO A LOS DATOS QUE NOS RETORNE EL ARRAY E IMPRIMIMOS VALORES DE PRODUCTOS */
-        /* foreach($arrayProductos as $prod){
-
-          echo "
-                <div class='card' style='width: 18rem; position: relative;'>";
-                if ($prod['estado'] === 'descuento') {
-                  echo "<span class='pt-2 pb-2 pl-3 pr-3 badge bg-danger text-white' style='position: absolute;z-index: 115;top: -1px;right: -12px; font-size: 18px;'>".$prod['estado']."</span>";
-                }
-
-                if ($prod['estado'] === 'reservado') {
-                  echo "<span class='pt-2 pb-2 pl-3 pr-3 badge bg-success text-white' style='position: absolute;z-index: 115;top: -1px;right: -12px; font-size: 18px;'>".$prod['estado']."</span>";
-                } 
-
-                if ($prod['estado'] === 'oferta') {
-                  echo "<span class='pt-2 pb-2 pl-3 pr-3 badge bg-warning text-white' style='position: absolute;z-index: 115;top: -1px;right: -12px; font-size: 18px;'>".$prod['estado']."</span>";
-                }
-
-                if ($prod['estado'] === 'activo') {
-                  echo "<span class='pt-2 pb-2 pl-3 pr-3 badge bg-primary text-white' style='position: absolute;z-index: 115;top: -1px;right: -12px; font-size: 18px;'>".$prod['estado']."</span>";
-                }
-
-                if ($prod['estado'] === 'stock') {
-                  echo "<span class='pt-2 pb-2 pl-3 pr-3 badge bg-dark text-white' style='position: absolute;z-index: 115;top: -1px;right: -12px; font-size: 18px;'>".$prod['estado']."</span>";
-                }
-
-                if ($prod['estado'] === 'vendido') {
-
-                  echo "<div class='spam-stock' style='position: relative;'>
-                    <div class='text-stock' style='background-color: #fff; height: 100%; width: 100%;
-                    text-align: center;position: absolute;z-index: 100;opacity: 0.5;font-size: 40px;font-weight: bold;padding-top: 60px;'>";
-
-                  echo "<p class='card-text'>".$prod['estado']."</p>";
-
-                }else{
-
-                  echo "<div class='spam-stock' style='position: relative;'>
-                    <div class='text-stock' height: 100%; width: 100%;
-                    text-align: center;position: absolute;z-index: 100;opacity: 0.2;font-size: 40px;font-weight: bold;padding-top: 60px;'>";
-                }
-
-                    echo"</div>
-                    <img style='height: 180px!important;' src='".$prod['imagen_front']."' class='card-img-top' alt='...'>
-                  </div>
-                  <div class='card-body'>
-                    <h5 class='card-title'>".$prod['nombre']."</h5>
-                      <p class='card-text'><strong>categoria: </strong>".$prod['categoria']."</p>
-                      <p class='card-text'>".$prod['descripcion']."</p>
-                      <div class='pree-footer mb-3' style='display:flex;'>
-                        <h2 style='display: flex;justify-content: end;'> 
-                          <span class=' text-white badge bg-secondary'>€ ".$prod['precio']."</span>
-                        </h2>                        
-                      </div>                      
-                      <a href='http://localhost/TiendaPHP-Ajax/views/singlepage.php?param=".$prod['id']."' class='btn btn-primary'>Leer mas...</a>
-                  </div>
-                </div>";
-        } */
-    ?>   
   </div>
 </div><!-- fin container -->
 

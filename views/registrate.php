@@ -147,7 +147,7 @@
 
 <script src="../js/mapa.js"></script>
 
-<script src="../js/app.js"></script>
+<script src="../js/crearProductos.js"></script>
 
 <script src="../js/userRegister.js"></script>
 

@@ -132,7 +132,6 @@ $(document).ready(function(){
             let idUser = datos[property].id;
 
             generadorMarker(latitud, longitud, nick, idUser);
-            
         }
     }
     /* OBTENEMOS LATITUD Y LONGITUD */

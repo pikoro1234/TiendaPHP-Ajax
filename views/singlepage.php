@@ -3,7 +3,7 @@
     /* INCLUIMOS LOS FICHEROS QUE UTILIZAREMOS */
     require_once('../templates/header.php');
     require_once('../models/conexion.php');
-    require_once('../models/consultasPublic.php');
+    require_once('../modelsJS/single-page-cont-visitas.php');
 
     /* GUARDAMOS LA CONEXION EN VARIABLE PARA UTILIZARLA COMO PARAMETRO */
     $conn = conexion();
@@ -16,35 +16,6 @@
 
     /* ARRAY CON DATOS DE PRODUCTO CON ID PASADO COMO PARAMETRO */
     $arraySingle = selectSinglePageProducto($conn,$idUser);
-
-    /* METODOS PARA MOSTRAR IMAGEN (2 Y 3) ESTANDAR A PRODUCTOS SIN FOTOS */
-    $arraySingle[0]['imagen_back'] = substr($arraySingle[0]['imagen_back'],0,56);
-
-    $arraySingle[0]['imagen_back'] .= "nofoto.png";
-
-    $arraySingle[0]['imagen_left'] = substr($arraySingle[0]['imagen_left'],0,56);
-
-    $arraySingle[0]['imagen_left'] .= "nofoto.png";
-
-    /* if (strlen($arraySingle[0]['imagen_back']) == 56) {
-
-        $arraySingle[0]['imagen_back'] .= "nofoto.png";
-    }
-
-    if (strlen($arraySingle[0]['imagen_left']) == 56) {
-
-        $arraySingle[0]['imagen_left'] .= "nofoto.png";
-    } */
-
-
-    /* if (isset($_COOKIE['prueba'])) {
-
-        setcookie("prueba",$_COOKIE['prueba']+1,time()+60+60+60);
-        
-    }else{
-
-        setcookie("prueba",1,time()+60+06+06);
-    }*/
 
     /* INCREMENTAMOS UNO A LAS VISITAS Y LA PASAMOS COMO PARAMETRO */
     $valor = $arraySingle[0]['numero_visitas']+1;

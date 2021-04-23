@@ -35,20 +35,6 @@ const generadorModal = (idProducto) =>{
 
             if (this.responseText === "true") {
 
-                /* $('#exampleModal').css('display', 'none');
-
-                $('#exampleModal').attr('aria-hidden','true');
-
-                $('#exampleModal').attr('aria-modal','false');
-
-                $('btn-eliminar-producto').attr('data-dismiss','modal');
-
-                $('btn-eliminar-producto').addClass('close');
-
-                $('#exampleModal').removeClass('show');
-
-                $('.modal-backdrop').css('display','none');  */
-
                 window.location = 'http://localhost/TiendaPHP-Ajax/views/dashboard/principal.php';
             }
         }
