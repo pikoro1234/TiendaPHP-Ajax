@@ -48,6 +48,7 @@
     <?php require_once('../../templates/sidebarsecond.php');?>
 
     <div class="content-rigth p-5">
+    <input type="text" name="idProducto" id="idProducto" value="<?php echo $idActualizar;?>">
         
         <form action="http://localhost/TiendaPHP-Ajax/controllers/actualizarProducto.php" method="POST" class="p-5 bg-white m-5">
             

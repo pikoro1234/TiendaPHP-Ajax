@@ -53,9 +53,10 @@ $(document).ready(function(){
 
         for (let index = 0; index < arrayElementos.length; index++) {
 
-            nombreProducto.push(arrayElementos[index].nombre +"</br>");
+            nombreProducto.push(index+".- "+arrayElementos[index].nombre +"</br>");
            
-            mark.bindPopup(`<b class="text-center d-block">${usuario}</b></br> <em class="text-primary mb-3">el id es: ${idUserconst}</em></br></br> <span class="text-center d-block mb-2 text-success">Mis Productos</span><b>${nombreProducto}</b></br>`).openPopup(); 
+            mark.bindPopup(`<figure class="figure">
+            <img src="${arrayElementos[index].imagen_front}" class="figure-img img-fluid rounded" alt="..."><figcaption class="figure-caption">Imagen producto</figcaption></figure><b class="text-center d-block">${usuario}</b></br> <em class="text-primary mb-3">el id es: ${idUserconst}</em></br></br> <span class="text-center d-block mb-2 text-success font-weight-bold fs-3">Mis Productos</span><b><span class="fs-3">${nombreProducto}</span></b></br>`).openPopup(); 
         }
 
     }
