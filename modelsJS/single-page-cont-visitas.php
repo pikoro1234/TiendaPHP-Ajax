@@ -1,6 +1,6 @@
 <?php 
    
-    /* MOSTRAMOS PRODUCTO SOLO DEPENDIENDO DEL ID DEL PRODUCTO RECIBIDO POR PARAMETRO EN SINGLEPAGE */
+    /* TRAEMOS LAS VISITAS DE USUARIOS POR PAGINA */
     function selectSinglePageProducto($con, $id){
         
         $resultado = array();
@@ -96,7 +96,7 @@
     }
 
     /* VERIFICAMOS PRODUCTO ANTES DE ELIMINARLO */ // ------ USO DE PDO
-    function verificarProducto($conPDO, $idEliminar){
+    /* function verificarProducto($conPDO, $idEliminar){
 
         try {
 
@@ -123,7 +123,7 @@
             die($e->getMessage());
         }
 
-    }
+    } */
 
     /* TRAER MIS PRODUCTOS PARA PAGINA ACTUALIZAR */ // ---- USO DE PDO
     function traerMisProductos($conPDO, $idActualiar){
@@ -159,7 +159,7 @@
     }
 
     /* ELIMINAMOS EL PRODUCTO YA VERIFICADO QUE EXISTE */ // ----- USO DE PDO
-    function eliminarProducto($conPDO, $idEliminar){
+    /* function eliminarProducto($conPDO, $idEliminar){
 
         try {
 
@@ -181,5 +181,5 @@
             die($e->getMessage());
         }
 
-    }
+    } */
 ?>
