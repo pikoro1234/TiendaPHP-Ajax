@@ -7,7 +7,7 @@
 
         $valor = $id;
 
-        $sql = "SELECT * FROM producto WHERE id = ?";
+        $sql = "SELECT numero_visitas FROM producto WHERE id = ?";
 
         $consulta = $con->prepare($sql);
 
