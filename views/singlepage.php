@@ -2,25 +2,12 @@
 
     /* INCLUIMOS LOS FICHEROS QUE UTILIZAREMOS */
     require_once('../templates/header.php');
-    require_once('../models/conexion.php');
-    require_once('../modelsJS/single-page-cont-visitas.php');
-
-    /* GUARDAMOS LA CONEXION EN VARIABLE PARA UTILIZARLA COMO PARAMETRO */
-    $conn = conexion();
 
     /* RECOGEMOS EL ID DEL PRODUCTO POR MEDIO DE LA URL */
     if (isset($_GET['param'])) {
 
         $idUser = $_GET['param'];
     }
-
-    /* TRAEMOS EL NOUMERO DE VISITAS DESDE DB */
-    $numero_visitas = selectSinglePageProducto($conn,$idUser);
-
-    /*INCREMENTAMOS UNO A LAS VISITAS Y LA PASAMOS COMO PARAMETRO */
-    $valor = $numero_visitas[0]['numero_visitas']+1;
-
-    contadorVisitas($conn,$idUser,$valor);
 ?>
 
 <h1 class="text-center mt-2 mb-3 my-4">Single Page</h1>
