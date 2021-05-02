@@ -13,6 +13,8 @@ ANOTACIONES IMPORTANTES
 - Cargar el archivo SQL de la base de datos por medio
   de la herramienta phpmyadmin.
 
+- El archivo SQL esta en el directorio raiz del proyecto /MYSQL/id8972026_webhost.sql
+
 - Mover el directorio del proyecto a la raiz htdocs.
 
 - Seguidos todos los puntos el proyecto ya sera accesible por medio
